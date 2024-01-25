@@ -1,10 +1,9 @@
 package garagi.mr.backend.model;
 
-//import javax.persistence.*;
-
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.Objects;
 
 
 @Entity
@@ -38,5 +37,76 @@ public class Booking {
     private String status;
 
     // Getters and setters
+
+
+    public Long getBookingId() {
+        return bookingId;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public Garage getGarage() {
+        return garage;
+    }
+
+    public GarageService getGarageService() {
+        return garageService;
+    }
+
+    public Date getBookingDate() {
+        return bookingDate;
+    }
+
+    public Date getServiceDate() {
+        return serviceDate;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+
+    public void setBookingId(Long bookingId) {
+        this.bookingId = bookingId;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void setGarage(Garage garage) {
+        this.garage = garage;
+    }
+
+    public void setGarageService(GarageService garageService) {
+        this.garageService = garageService;
+    }
+
+    public void setBookingDate(Date bookingDate) {
+        this.bookingDate = bookingDate;
+    }
+
+    public void setServiceDate(Date serviceDate) {
+        this.serviceDate = serviceDate;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Booking booking)) return false;
+        return Objects.equals(getBookingId(), booking.getBookingId()) && Objects.equals(getUser(), booking.getUser()) && Objects.equals(getGarage(), booking.getGarage()) && Objects.equals(getGarageService(), booking.getGarageService()) && Objects.equals(getBookingDate(), booking.getBookingDate()) && Objects.equals(getServiceDate(), booking.getServiceDate()) && Objects.equals(getStatus(), booking.getStatus());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getBookingId(), getUser(), getGarage(), getGarageService(), getBookingDate(), getServiceDate(), getStatus());
+    }
+
 
 }

@@ -2,7 +2,6 @@ package garagi.mr.backend.model;
 
 import jakarta.persistence.*;
 
-//import javax.persistence.*;
 
 @Entity
 @Table(name = "Roles")
@@ -13,9 +12,25 @@ public class Role {
     @Column(name = "RoleID")
     private Long roleId;
 
-    @Column(name = "RoleName", nullable = false)
+    @Column(name = "RoleName")
     private String roleName;
 
     // Getters and setters
 
+
+    public Long getRoleId() {
+        return roleId;
+    }
+
+    public void setRoleId(Long roleId) {
+        this.roleId = roleId;
+    }
+
+    public String getRoleName() {
+        return roleName;
+    }
+
+    public void setRoleName(String roleName) {
+        this.roleName = roleName;
+    }
 }

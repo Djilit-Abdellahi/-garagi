@@ -1,6 +1,5 @@
 package garagi.mr.backend.model;
 
-//import javax.persistence.*;
 import jakarta.persistence.*;
 
 
