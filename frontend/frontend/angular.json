@@ -25,9 +25,20 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/assets/css/icons.min.css",
+              "src/assets/css/app.min.css"
+             
             ],
-            "scripts": []
+            "scripts": [
+                "src/assets/js/vendor.min.js",
+                "src/assets/js/app.min.js",
+                "src/assets/js/vendor/apexcharts.min.js",
+                "src/assets/js/vendor/jquery-jvectormap-1.2.2.min.js",
+                "src/assets/js/vendor/jquery-jvectormap-world-mill-en.js",
+                "src/assets/js/pages/demo.dashboard.js"
+                
+            ]
           },
           "configurations": {
             "production": {

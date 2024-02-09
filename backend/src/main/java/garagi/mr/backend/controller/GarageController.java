@@ -1,8 +1,10 @@
 package garagi.mr.backend.controller;
 
 import garagi.mr.backend.model.Garage;
+import garagi.mr.backend.model.Role;
 import garagi.mr.backend.services.GarageService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -10,6 +12,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/garages")
+@CrossOrigin("http://localhost:4200/")
 public class GarageController {
 
     private final GarageService garageService;
@@ -19,11 +22,17 @@ public class GarageController {
         this.garageService = garageService;
     }
 
-    // Path: /api/garages/getAllGarages
+
     @GetMapping("/getAllGarages")
-    public List<Garage> getAllGarages() {
+    public ResponseEntity<List<Garage>> getAllRoles() {
         return garageService.getAllGarages();
     }
+
+    // Path: /api/garages/getAllGarages
+//    @GetMapping("/getAllGarages")
+//    public List<Garage> getAllGarages() {
+//        return garageService.getAllGarages();
+//    }
 
     // Path: /api/garages/getGarage/{garageId}
     @GetMapping("/getGarage/{garageId}")

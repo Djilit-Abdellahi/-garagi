@@ -1,0 +1,144 @@
+<!-- <p>header works!</p> -->
+<!-- <nav> -->
+
+    <!-- *ngIf="!authenticationService.currentUserValue" -->
+    <!-- <a  routerLink="/login">Login</a> -->
+    <!-- <a *ngIf="!authenticationService.currentUserValue" routerLink="/register">Register</a> -->
+    <!-- *ngIf="authenticationService.currentUserValue" -->
+    <!-- <a  (click)="logout()">Logout</a> -->
+    <!-- Add more navigation links here based on user role -->
+  <!-- </nav> -->
+  <!-- <router-outlet></router-outlet> -->
+
+  
+  <div class="navbar-custom topnav-navbar">
+    <div class="container-fluid">
+      <!-- LOGO -->
+      <a routerLink="/" class="topnav-logo">
+        <span class="topnav-logo-lg">
+          <img src="assets/images/logo-light.png" alt="logo" height="16">
+        </span>
+        <span class="topnav-logo-sm">
+          <img src="assets/images/logo_sm_dark.png" alt="logo" height="16">
+        </span>
+      </a>
+  
+      <ul class="list-unstyled topbar-menu float-end mb-0">
+        <!-- Show Login and Register if not authenticated -->
+       
+  
+        <!-- User Dropdown for authenticated users -->
+        <li *ngIf="authenticationService.currentUserValue" class="dropdown notification-list" >
+          <a class="nav-link dropdown-toggle nav-user arrow-none me-0" id="topbar-userdrop" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"  (click)="toggleDropdown()" [attr.aria-expanded]="isOpen ? 'true' : 'false'">
+            <span class="account-user-avatar"> 
+              <img src="assets/images/users/avatar-1.jpg" alt="user-image" class="rounded-circle">
+            </span>
+            <span>
+              <span class="account-user-name">{{ authenticationService.currentUserValue.name }} admin</span>
+              <span class="account-position">Founder</span>
+            </span>
+          </a>
+
+          <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown" [class.show]="isOpen">
+            <a class="dropdown-item notify-item">
+              <i class="mdi mdi-account-circle me-1"></i>
+              My Account
+            </a>
+            <a class="dropdown-item notify-item">
+              <i class="mdi mdi-account-edit me-1"></i>
+              Settings
+            </a>
+            <a class="dropdown-item notify-item">
+              <i class="mdi mdi-lifebuoy me-1"></i>
+              Support
+            </a>
+            <a class="dropdown-item notify-item">
+              <i class="mdi mdi-lock-outline me-1"></i>
+              Lock Screen
+            </a>
+            <a class="dropdown-item notify-item" (click)="logout()">
+              <i class="mdi mdi-logout me-1"></i>
+              Logout
+            </a>
+          </div>
+
+        </li>
+      </ul>
+  
+      <a class="navbar-toggle" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
+        <div class="lines">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </a>
+  
+      <!-- Search Form -->
+      
+    </div>
+  </div>
+  
+
+
+  <div class="topnav">
+    <div class="container-fluid">
+        <nav class="navbar navbar-dark navbar-expand-lg topnav-menu">
+
+            <div class="collapse navbar-collapse" id="topnav-menu-content">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-dashboards" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="uil-dashboard me-1"></i>Dashboards <div class="arrow-down"></div>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="topnav-dashboards">
+                            <a href="dashboard-analytics.html" class="dropdown-item">Analytics</a>
+                            <a href="dashboard-crm.html" class="dropdown-item">CRM</a>
+                            
+                        </div>
+                    </li>
+                   
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-layouts" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <i class="uil-window me-1"></i>Layouts <div class="arrow-down"></div>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="topnav-layouts">
+                            <a href="index.html" class="dropdown-item">Vertical</a>
+                            <a href="layouts-detached.html" class="dropdown-item">Detached</a>
+                            <a href="layouts-horizontal.html" class="dropdown-item">Horizontal</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+
+
+<div class="container-fluid">
+
+  <!-- start page title -->
+  <div class="row">
+      <div class="col-12">
+          <div class="page-title-box">
+              <div class="page-title-right">
+                 
+              </div>
+              <h4 class="page-title">Dashboard</h4>
+          </div>
+      </div>
+  </div>
+  <!-- end page title -->
+
+  <div class="row">
+    <div class="col-12">
+        <div class="card">
+            <div class="card-body">
+                <h4 class="header-title mb-3">World Vector Map</h4>
+                <div id="world-map-markers" style="height: 360px"></div>
+            </div> <!-- end card-body-->
+        </div> <!-- end card-->
+    </div> <!-- end col-->
+</div>
+
+</div>

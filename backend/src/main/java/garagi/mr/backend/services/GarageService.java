@@ -1,8 +1,13 @@
 package garagi.mr.backend.services;
 
 import garagi.mr.backend.model.Garage;
+import garagi.mr.backend.model.Role;
 import garagi.mr.backend.repository.GarageRepository;
+import garagi.mr.backend.repository.RoleRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,16 +16,21 @@ import java.util.Optional;
 @Service
 public class GarageService {
 
-    private final GarageRepository garageRepository;
-
+    private static final Logger logger = LoggerFactory.getLogger(RoleService.class);
     @Autowired
-    public GarageService(GarageRepository garageRepository) {
-        this.garageRepository = garageRepository;
-    }
+    private GarageRepository garageRepository;
+
+
 
     // Get all garages
-    public List<Garage> getAllGarages() {
-        return garageRepository.findAll();
+//    public List<Garage> getAllGarages() {
+//        return garageRepository.findAll();
+//    }
+
+    public ResponseEntity<List<Garage>> getAllGarages() {
+        List<Garage> roles = garageRepository.findAll();
+        logger.info("HEY ",roles);
+        return ResponseEntity.ok(roles);
     }
 
     // Get a single garage by ID
