@@ -1,6 +1,8 @@
 import { Component,HostBinding  } from '@angular/core';
 import { GarageService } from './modules/user/services/garage.service'; // Import the service
 import { OnInit } from '@angular/core';
+import {AdminSidebarComponent } from './modules/admin/components/admin-sidebar/admin-sidebar.component';
+
 
 @Component({
   selector: 'app-root',

@@ -28,11 +28,17 @@ import { HeaderComponent } from './shared/components/header/header.component'; /
 import { LoginComponent } from './shared/components/login/login.component'; // Update path as necessary
 import { AuthenticationService } from './core/authentication/authentication.service'; // Update path as necessary
 import { UserComponent } from './modules/user/components/user/user.component';
+import { AdminSidebarComponent } from './modules/admin/components/admin-sidebar/admin-sidebar.component';
+import { AdminComponent } from './modules/admin/components/admin/admin.component';
+import { AdminHeaderComponent } from './modules/admin/components/admin-header/admin-header.component';
 // Import other components and services as necessary
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  {path: 'test',component: UserComponent }
+  {path: 'test',component: UserComponent },
+  { path: 'admin', component: AdminSidebarComponent },
+  { path: 'adminn', component: AdminComponent },
+  { path: 'adminnn', component: AdminHeaderComponent },
   // Add more routes here
   // { path: '', redirectTo: '/login', pathMatch: 'full' } // Redirect to login by default
 ];
