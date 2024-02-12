@@ -5,6 +5,7 @@ import { HighlightDirective } from './directives/highlight.directive';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
+import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
 
 
 
@@ -14,7 +15,8 @@ import { RegistrationComponent } from './components/registration/registration.co
     HighlightDirective,
     CapitalizePipe,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    WelcomePageComponent
   ],
   imports: [
     CommonModule

@@ -1,8 +1,7 @@
 import { Component,HostBinding  } from '@angular/core';
 import { GarageService } from './modules/user/services/garage.service'; // Import the service
 import { OnInit } from '@angular/core';
-import {AdminSidebarComponent } from './modules/admin/components/admin-sidebar/admin-sidebar.component';
-
+// import { AdminComponent } from './modules/admin/components/admin/admin.component';
 
 @Component({
   selector: 'app-root',
@@ -13,9 +12,9 @@ export class AppComponent  implements OnInit  {
   title = 'frontend';
   alldata: any; 
 
-  @HostBinding('class') class = 'loading';
-  @HostBinding('attr.data-layout') layout = 'topnav';
-  @HostBinding('attr.data-layout-config') config = '{"layoutBoxed":false,"darkMode":false}';
+  // @HostBinding('class') class = 'loading';
+  // @HostBinding('attr.data-layout') layout = 'topnav';
+  // @HostBinding('attr.data-layout-config') config = '{"layoutBoxed":false,"darkMode":false}';
   // class="loading" data-layout="topnav" data-layout-config='{"layoutBoxed":false,"darkMode":false,"showRightSidebarOnStart": true}'
 
 

@@ -5,7 +5,7 @@ import { UserRoutingModule } from './user-routing.module';
 import { MapComponent } from './components/map/map.component';
 import { GarageDetailComponent } from './components/garage-detail/garage-detail.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
-import { UserComponent } from './user/user.component';
+import { UserComponent } from './components/user/user.component';
 
 
 @NgModule({
