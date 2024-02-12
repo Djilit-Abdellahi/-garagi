@@ -1,0 +1,16 @@
+.card-header.position-relative {
+    position: relative; /* Ensure the parent is positioned relative */
+}
+
+.logo-container {
+    position: absolute; /* Position your logo absolutely */
+    top: -60px; /* Adjust as necessary */
+    left: 50%; /* Center the logo */
+    transform: translateX(-50%); /* Align the center of the logo with the center of the card */
+    z-index: 10; /* Ensure it's above other elements */
+}
+
+.logo-image {
+    height: auto; /* Keep the original aspect ratio */
+    width: 200px; /* Or whatever width you desire */
+}

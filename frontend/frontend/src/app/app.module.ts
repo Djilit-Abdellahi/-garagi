@@ -35,6 +35,8 @@ import { AdminHeaderComponent } from './modules/admin/components/admin-header/ad
 import { HomeComponent } from './modules/user/pages/home/home.component'
 import {UserModule} from './modules/user/user.module'
 import { BookingComponent } from './modules/user/pages/booking/booking.component';
+import { RegistrationComponent} from './shared/components/registration/registration.component';
+
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'test',component: UserComponent },
@@ -42,7 +44,8 @@ const appRoutes: Routes = [
   { path: 'adminn', component: AdminComponent },
   { path: 'adminnn', component: AdminHeaderComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'booking', component: BookingComponent }
+  { path: 'booking', component: BookingComponent },
+  { path: 'signup', component: RegistrationComponent }
 
   // Add more routes here
   // { path: '', redirectTo: '/login', pathMatch: 'full' } // Redirect to login by default
