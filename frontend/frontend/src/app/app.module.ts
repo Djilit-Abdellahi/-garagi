@@ -32,13 +32,18 @@ import { AdminSidebarComponent } from './modules/admin/components/admin-sidebar/
 import { AdminComponent } from './modules/admin/components/admin/admin.component';
 import { AdminHeaderComponent } from './modules/admin/components/admin-header/admin-header.component';
 // Import other components and services as necessary
-
+import { HomeComponent } from './modules/user/pages/home/home.component'
+import {UserModule} from './modules/user/user.module'
+import { BookingComponent } from './modules/user/pages/booking/booking.component';
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
   {path: 'test',component: UserComponent },
   { path: 'admin', component: AdminSidebarComponent },
   { path: 'adminn', component: AdminComponent },
   { path: 'adminnn', component: AdminHeaderComponent },
+  { path: 'home', component: HomeComponent },
+  { path: 'booking', component: BookingComponent }
+
   // Add more routes here
   // { path: '', redirectTo: '/login', pathMatch: 'full' } // Redirect to login by default
 ];
@@ -55,7 +60,9 @@ const appRoutes: Routes = [
     FormsModule, // For using [(ngModel)]
     RouterModule.forRoot(appRoutes), // Configure routes
     // Import other modules
-    HttpClientModule, // Add HttpClientModule to imports
+    HttpClientModule,
+     // Add HttpClientModule to imports
+    //  UserModule
   ],
   providers: [AuthenticationService], // Add services
   bootstrap: [AppComponent]

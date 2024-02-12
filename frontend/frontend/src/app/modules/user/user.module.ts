@@ -5,7 +5,11 @@ import { UserRoutingModule } from './user-routing.module';
 import { MapComponent } from './components/map/map.component';
 import { GarageDetailComponent } from './components/garage-detail/garage-detail.component';
 import { SearchFormComponent } from './components/search-form/search-form.component';
-import { UserComponent } from './user/user.component';
+// import { UserComponent } from './user/user.component';
+import { UserComponent } from './components/user/user.component'
+import { TopNavComponent } from './components/top-nav/top-nav.component';
+import { HomeComponent } from './pages/home/home.component';
+import { BookingComponent } from './pages/booking/booking.component';
 
 
 @NgModule({
@@ -13,7 +17,10 @@ import { UserComponent } from './user/user.component';
     MapComponent,
     GarageDetailComponent,
     SearchFormComponent,
-    UserComponent
+    UserComponent,
+    TopNavComponent,
+    HomeComponent,
+    BookingComponent
   ],
   imports: [
     CommonModule,
