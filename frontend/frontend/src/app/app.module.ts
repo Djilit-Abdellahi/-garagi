@@ -15,7 +15,7 @@
 // })
 // export class AppModule { }
 
-import { HttpClientModule } from '@angular/common/http'; 
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router';
@@ -28,15 +28,35 @@ import { HeaderComponent } from './shared/components/header/header.component'; /
 import { LoginComponent } from './shared/components/login/login.component'; // Update path as necessary
 // import { AuthenticationService } from './core/authentication/authentication.service'; // Update path as necessary
 import { UserComponent } from './modules/user/components/user/user.component';
+// import { LoginComponent } from './shared/components/login/login.component'
 
-
+import { AuthGuard } from './core/authentication/auth.guard';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 const appRoutes: Routes = [
   { path: 'login', component: LoginComponent },
-  {path: 'test',component: UserComponent },
-  { path: '', loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule) },
-  { path: '', loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule) },
+  { path: '', component: UserComponent },
+  // { path: 'welcome', component:}
+  {
+    path: '', loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule),
+    canActivate: [AuthGuard],
+    data: { roles: ['admin'] }
+  },
+  {
+    path: '', loadChildren: () => import('./modules/user/user.module').then(m => m.UserModule), 
+    canActivate: [AuthGuard],
+    data: { roles: ['user'] }
+  },
 ];
+
+
+
+// { path: 'admin', component: AdminSidebarComponent },
+//   { path: 'adminn', component: AdminComponent },
+//   { path: 'adminnn', component: AdminHeaderComponent },
+//   { path: 'home', component: HomeComponent },
+//   { path: 'booking', component: BookingComponent },
+//   { path: 'signup', component: RegistrationComponent }
 
 @NgModule({
   declarations: [
@@ -49,8 +69,8 @@ const appRoutes: Routes = [
     FormsModule, // For using [(ngModel)]
     RouterModule.forRoot(appRoutes, { enableTracing: true }), // Configure routes
     // Import other modules
-    HttpClientModule, // Add HttpClientModule to imports
-    
+    HttpClientModule, BrowserAnimationsModule, // Add HttpClientModule to imports
+
   ],
   providers: [], // Add services
   bootstrap: [AppComponent]

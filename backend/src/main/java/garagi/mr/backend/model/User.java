@@ -1,5 +1,6 @@
 package garagi.mr.backend.model;
 
+import garagi.mr.backend.token.Token;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -41,7 +42,17 @@ public class User implements UserDetails {
 
     @Override
     public Collection<? extends GrantedAuthority> getAuthorities() {
-        return getAuthorities();
+        return role.getAuthorities();
+    }
+    @OneToMany(mappedBy = "user")
+    private List<Token> tokens;
+
+    public List<Token> getTokens() {
+        return tokens;
+    }
+
+    public void setTokens(List<Token> tokens) {
+        this.tokens = tokens;
     }
 
     @Override

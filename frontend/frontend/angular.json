@@ -25,10 +25,10 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.css",
               "src/assets/css/icons.min.css",
               "src/assets/css/app.min.css"
-             
             ],
             "scripts": [
                 "src/assets/js/vendor.min.js",
@@ -98,6 +98,7 @@
               "src/assets"
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/pink-bluegrey.css",
               "src/styles.css"
             ],
             "scripts": []

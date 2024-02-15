@@ -7,33 +7,31 @@ import { ReservationNotificationsComponent } from './components/reservation-noti
 import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.component';
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
+// import { UserManageComponent } from './pages/user-manage/user-manage.component';
+import { TableComponent } from './components/table/table.component';
 
 export const routes: Routes = [
   {
-    path: 'admin', // This path is for '/admin' due to lazy loading in AppModule
-    component: AdminComponent, // The AdminComponent is the default view for '/admin'
-    
+    path: 'admin',
+    component: AdminComponent, 
   },
   {
-    path: 'garage-management', // This path is for '/admin/garage-management'
-    component: GarageManagementComponent, // The GarageManagementComponent is the view for '/admin/garage-management'
-    
+    path: 'garage-management',
+    component: GarageManagementComponent,
   },
   {
-    path: 'reservation-notifications', // This path is for '/admin/reservation-notifications'
-    component: ReservationNotificationsComponent, // The ReservationNotificationsComponent is the view for '/admin/reservation-notifications'
-    
+    path: 'reservation-notifications',
+    component: ReservationNotificationsComponent,
   },
   {
-    path: 'admin-sidebar', // This path is for '/admin/admin-sidebar'
-    component: AdminSidebarComponent, // The AdminSidebarComponent is the view for '/admin/admin-sidebar'
-    
+    path: 'user-manage', 
+    component: AdminHomeComponent, 
   },
   {
-    path: 'admin-header', // This path is for '/admin/admin-header'
-    component: AdminHeaderComponent, // The AdminHeaderComponent is the view for '/admin/admin-header'
+    path: 'admin-header',
+    component: TableComponent,
   }
-  // ... other routes that are part of the admin module
 ];
 
 @NgModule({

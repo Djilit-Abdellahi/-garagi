@@ -6,6 +6,11 @@ import { ReservationNotificationsComponent } from './components/reservation-noti
 import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.component';
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
+import { UserManageComponent } from './pages/user-manage/user-manage.component';
+import { TableComponent } from './components/table/table.component';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
 
 
 @NgModule({
@@ -14,11 +19,16 @@ import { AdminComponent } from './components/admin/admin.component';
     ReservationNotificationsComponent,
     AdminSidebarComponent,
     AdminHeaderComponent,
-    AdminComponent
+    AdminComponent,
+    AdminHomeComponent,
+    UserManageComponent,
+    TableComponent
   ],
   imports: [
     CommonModule,
-    AdminRoutingModule
+    AdminRoutingModule,
+    MatSortModule,
+    MatTableModule
   ]
 })
 export class AdminModule { }
