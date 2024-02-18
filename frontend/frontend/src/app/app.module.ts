@@ -27,7 +27,7 @@ import { HeaderComponent } from './shared/components/header/header.component'; /
 // import { LoginComponent } from './shared/login/login.component'; // Update path as necessary
 import { LoginComponent } from './shared/components/login/login.component'; // Update path as necessary
 // import { AuthenticationService } from './core/authentication/authentication.service'; // Update path as necessary
-import { UserComponent } from './modules/user/components/user/user.component';
+import { UserHomeComponent } from './modules/user/pages/user-home/user-home.component';
 // import { LoginComponent } from './shared/components/login/login.component'
 
 import { AuthGuard } from './core/authentication/auth.guard';
@@ -39,13 +39,17 @@ import { GarageHeaderComponent } from './modules/garage/components/garage-header
 import { GarageHomeComponent } from './modules/garage/pages/garage-home/garage-home.component';
 import { GarageRoutingModule } from './modules/garage/garage-routing.module';
 import { MapComponent } from './modules/user/components/map/map.component';
+import { HomeComponent } from './shared/home/home.component';
+import { RegistrationComponent } from './shared/components/registration/registration.component';
+
 
 const appRoutes: Routes = [
   { path: 'stat', component: StatisticsComponent },
   { path: 'map', component: MapComponent },
  
   { path: 'login', component: LoginComponent },
-  { path: '', component: UserComponent },
+  { path: '', component: HomeComponent },
+  { path: 'signup', component: RegistrationComponent },
   // { path: 'welcome', component:}
   {
     path: '', loadChildren: () => import('./modules/admin/admin.module').then(m => m.AdminModule),

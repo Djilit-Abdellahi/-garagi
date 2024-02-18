@@ -1,109 +1,93 @@
+
 <div class="navbar-custom topnav-navbar">
-    <div class="container-fluid">
-      <!-- LOGO -->
-      <a routerLink="/" class="topnav-logo">
-        <span class="topnav-logo-lg">
-          <img src="assets/images/logo.png" alt="logo" height="100">
-        </span>
-        <span class="topnav-logo-sm">
-          <img src="assets/images/logo_sm.png" alt="logo" height="100">
-        </span>
-      </a>
-  
-      <ul class="list-unstyled topbar-menu float-end mb-0">
-        <!-- Show Login and Register if not authenticated -->
+  <div class="container-fluid">
+    <!-- LOGO -->
+    <a routerLink="#" class="topnav-logo">
+      <span class="topnav-logo-lg">
+        <img src="assets/images/logo.png" alt="logo" height="130">
+      </span>
+      <span class="topnav-logo-sm">
+        <img src="assets/images/logo_sm.png" alt="logo" height="100">
+      </span>
+    </a>
 
-        <!-- User Dropdown for authenticated users -->
-        <li  class="dropdown notification-list" >
-          <a class="nav-link dropdown-toggle nav-user arrow-none me-0" id="topbar-userdrop" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"  >
-            <span class="account-user-avatar"> 
-              <img src="assets/images/users/avatar-1.png" alt="user-image" class="rounded-circle">
-            </span>
-            <span>
-              <span class="account-user-name">User</span>
-              <span class="account-position">Founder</span>
-            </span>
-          </a>
-
-          <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown" >
-            <a class="dropdown-item notify-item">
-              <i class="mdi mdi-account-circle me-1"></i>
-              My Account
-            </a>
-            <a class="dropdown-item notify-item">
-              <i class="mdi mdi-account-edit me-1"></i>
-              Settings
-            </a>
-            <a class="dropdown-item notify-item">
-              <i class="mdi mdi-lifebuoy me-1"></i>
-              Support
-            </a>
-            <a class="dropdown-item notify-item">
-              <i class="mdi mdi-lock-outline me-1"></i>
-              Lock Screen
-            </a>
-            <a class="dropdown-item notify-item" >
-              <i class="mdi mdi-logout me-1"></i>
-              Logout
-            </a>
-          </div>
-
-        </li>
-      </ul>
-  
-      <a class="navbar-toggle" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
-        <div class="lines">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </a>
-  
+    <ul class="list-unstyled topbar-menu float-end mb-0">
+      <!-- Show Login and Register if not authenticated -->
       
-    </div>
+      <!-- User Dropdown for authenticated users -->
+      <li  class="dropdown notification-list" >
+        <a class="nav-link dropdown-toggle nav-user arrow-none me-0" id="topbar-userdrop" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true"  >
+          <span class="account-user-avatar"> 
+            <img src="assets/images/users/avatar-1.png" alt="user-image" class="rounded-circle">
+          </span>
+          <span>
+            <span class="account-user-name">User</span>
+            <span class="account-position">Founder</span>
+          </span>
+        </a>
+
+        <div class="dropdown-menu dropdown-menu-end dropdown-menu-animated topbar-dropdown-menu profile-dropdown" >
+          <a class="dropdown-item notify-item">
+            <i class="mdi mdi-account-circle me-1"></i>
+            My Account
+          </a>
+          <a class="dropdown-item notify-item">
+            <i class="mdi mdi-account-edit me-1"></i>
+            Settings
+          </a>
+          <a class="dropdown-item notify-item">
+            <i class="mdi mdi-lifebuoy me-1"></i>
+            Support
+          </a>
+          <a class="dropdown-item notify-item">
+            <i class="mdi mdi-lock-outline me-1"></i>
+            Lock Screen
+          </a>
+          <a class="dropdown-item notify-item" >
+            <i class="mdi mdi-logout me-1"></i>
+            Logout
+          </a>
+        </div>
+
+      </li>
+    </ul>
+
+    <a class="navbar-toggle" data-bs-toggle="collapse" data-bs-target="#topnav-menu-content">
+      <div class="lines">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </a>
+
+    <!-- Search Form -->
+    
   </div>
-  
-
-
-  <div class="topnav">
-    <div class="container-fluid">
-        <nav class="navbar navbar-dark navbar-expand-lg topnav-menu">
-
-            <div class="collapse navbar-collapse" id="topnav-menu-content">
-                <ul class="navbar-nav">
-                  <a class="nav-link " href="/test" id="topnav-dashboards" role="button"  aria-expanded="false">
-                    <i class=" dripicons-home me-2"></i>Home
-                  </a>
-                  <a class="nav-link " href="/test" id="topnav-dashboards" role="button"  aria-expanded="false">
-                    <i class=" dripicons-home me-2"></i>Home
-                  </a>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-dashboards" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class="uil-window me-2"></i>Booking History<div class="arrow-down"></div>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="topnav-dashboards">
-                            <a href="dashboard-analytics.html" class="dropdown-item">Past Reservations List</a>
-                            <a href="dashboard-crm.html" class="dropdown-item">Current Reservation Status</a>
-                            
-                        </div>
-                    </li>
-                   
-
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle arrow-none" href="#" id="topnav-layouts" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <i class=" dripicons-heart  me-2"></i>Favorites<div class="arrow-down"></div>
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="topnav-layouts">
-                            <a href="index.html" class="dropdown-item">Favorite Garages</a>
-                            <a href="layouts-detached.html" class="dropdown-item">Reviews</a>
-                        </div>
-                    </li>
-                  <a class="nav-link " href="/test" id="topnav-dashboards" role="button"  aria-expanded="false">
-                    <i class=" dripicons-information    me-2"></i>About us
-                </a>
-                </ul>
-            </div>
-        </nav>
-    </div>
 </div>
 
+
+
+<div class="topnav" style="background-color:#727cf5 ;">
+  <div class="container-fluid">
+      <nav class="navbar navbar-dark navbar-expand-lg topnav-menu">
+
+          <div class="collapse navbar-collapse" id="topnav-menu-content">
+              <ul class="navbar-nav">
+                <a class="nav-link " href="/user-home" id="topnav-dashboards" role="button"  aria-expanded="false">
+                  <i class=" dripicons-home me-2"></i>Home
+                </a>
+                <a class="nav-link" href="/user-reservation" id="topnav-dashboards" role="button"aria-haspopup="true" aria-expanded="false">
+                          <i class="uil-window me-2"></i>Booking History
+                      </a>
+                  
+                 
+                      <a class="nav-link dropdown-toggle arrow-none" href="/user-favoris" id="topnav-layouts" role="button"  aria-expanded="false">
+                        <i class=" dripicons-heart  me-2"></i>Garage Portfolio
+                    </a>
+                  
+               
+              </ul>
+          </div>
+      </nav>
+  </div>
+</div>

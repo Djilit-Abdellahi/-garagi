@@ -1,13 +1,12 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { UserComponent } from './components/user/user.component';
-import { HomeComponent } from './pages/home/home.component';
-import { BookingComponent } from './pages/booking/booking.component';
-
+import { UserHomeComponent } from './pages/user-home/user-home.component';
+import { UserReservationComponent } from './pages/user-reservation/user-reservation.component';
+import { UserFavorisComponent } from "./pages/user-favoris/user-favoris.component";
 const routes: Routes = [
-  { path: 'user',component: UserComponent },
-  { path:'home',component: HomeComponent  },
-  { path:'booking' ,component: BookingComponent}
+  { path: 'user-home',component: UserHomeComponent },
+  { path:'user-favoris' ,component: UserFavorisComponent},
+  { path:'user-reservation' ,component: UserReservationComponent}
 ];
 
 
