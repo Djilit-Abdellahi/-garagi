@@ -26,9 +26,12 @@
             ],
             "styles": [
               "@angular/material/prebuilt-themes/pink-bluegrey.css",
-              "src/styles.css",
+              
               "src/assets/css/icons.min.css",
-              "src/assets/css/app.min.css"
+              "src/assets/css/app.min.css",
+              "node_modules/leaflet/dist/leaflet.css",
+              "node_modules/leaflet.markercluster/dist/MarkerCluster.css",
+              "node_modules/leaflet.markercluster/dist/MarkerCluster.Default.css"
             ],
             "scripts": [
                 "src/assets/js/vendor.min.js",
@@ -36,8 +39,10 @@
                 "src/assets/js/vendor/apexcharts.min.js",
                 "src/assets/js/vendor/jquery-jvectormap-1.2.2.min.js",
                 "src/assets/js/vendor/jquery-jvectormap-world-mill-en.js",
-                "src/assets/js/pages/demo.dashboard.js"
-                
+                "src/assets/js/pages/demo.dashboard.js",
+                "node_modules/leaflet/dist/leaflet.js",
+                "node_modules/leaflet.markercluster/dist/leaflet.markercluster.js"
+                 
             ]
           },
           "configurations": {

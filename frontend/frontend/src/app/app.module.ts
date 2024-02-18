@@ -32,8 +32,18 @@ import { UserComponent } from './modules/user/components/user/user.component';
 
 import { AuthGuard } from './core/authentication/auth.guard';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgChartsModule } from 'ng2-charts';
+import { StatisticsComponent } from './modules/admin/components/statistics/statistics.component';
+import { GarageSidebarComponent } from './modules/garage/components/garage-sidebar/garage-sidebar.component';
+import { GarageHeaderComponent } from './modules/garage/components/garage-header/garage-header.component';
+import { GarageHomeComponent } from './modules/garage/pages/garage-home/garage-home.component';
+import { GarageRoutingModule } from './modules/garage/garage-routing.module';
+import { MapComponent } from './modules/user/components/map/map.component';
 
 const appRoutes: Routes = [
+  { path: 'stat', component: StatisticsComponent },
+  { path: 'map', component: MapComponent },
+ 
   { path: 'login', component: LoginComponent },
   { path: '', component: UserComponent },
   // { path: 'welcome', component:}
@@ -63,13 +73,16 @@ const appRoutes: Routes = [
     AppComponent,
     HeaderComponent,
     LoginComponent,
+    GarageSidebarComponent,
+    GarageHeaderComponent,
+    GarageHomeComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule, // For using [(ngModel)]
     RouterModule.forRoot(appRoutes, { enableTracing: true }), // Configure routes
     // Import other modules
-    HttpClientModule, BrowserAnimationsModule, // Add HttpClientModule to imports
+    HttpClientModule, BrowserAnimationsModule, NgChartsModule, GarageRoutingModule, // Add HttpClientModule to imports
 
   ],
   providers: [], // Add services

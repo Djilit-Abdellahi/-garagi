@@ -1,0 +1,70 @@
+
+  <!-- statistics.component.html -->
+
+  
+  
+  
+
+  
+  <div class="">
+    <app-admin-sidebar></app-admin-sidebar>
+    <div class="content-page">
+        <div class="content">
+            <app-admin-header></app-admin-header>
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                               
+                            </div>
+                            <h4 class="page-title">Dashboard</h4>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title mb-3">Bar</h4>
+                                <div *ngIf="bookingsPerUserChartOptions">
+                                    <canvasjs-chart [options]="bookingsPerUserChartOptions"></canvasjs-chart>
+                                  </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title mb-3">Pie</h4>
+                                <div *ngIf="bookingStatusDistributionChartOptions">
+                                    <canvasjs-chart [options]="bookingStatusDistributionChartOptions"></canvasjs-chart>
+                                  </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title mb-3">Bar</h4>
+                                <div *ngIf="bookingsPerGarageChartOptions">
+                                    <canvasjs-chart [options]="bookingsPerGarageChartOptions"></canvasjs-chart>
+                                  </div>
+                            </div>
+                        </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>
