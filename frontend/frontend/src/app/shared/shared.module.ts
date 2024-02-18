@@ -7,7 +7,7 @@ import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
 import { CustomDateTimePipe } from './pipes/custom-date-time.pipe';
-import { FooterComponent } from '../modules/user/components/footer/footer.component';
+// import { FooterComponent } from '../modules/user/components/footer/footer.component';
 
 
 
@@ -20,7 +20,7 @@ import { FooterComponent } from '../modules/user/components/footer/footer.compon
     RegistrationComponent,
     WelcomePageComponent,
     CustomDateTimePipe,
-    FooterComponent
+    // FooterComponent
   ],
   imports: [
     CommonModule
