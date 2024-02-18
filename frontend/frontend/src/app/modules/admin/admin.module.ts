@@ -11,7 +11,9 @@ import { UserManageComponent } from './pages/user-manage/user-manage.component';
 import { TableComponent } from './components/table/table.component';
 import { MatSortModule } from '@angular/material/sort';
 import { MatTableModule } from '@angular/material/table';
-
+import { FormsModule } from '@angular/forms';
+import { ReservationComponent } from './pages/reservation/reservation.component';
+import { CustomDateTimePipe } from '../../shared/pipes/custom-date-time.pipe';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,16 @@ import { MatTableModule } from '@angular/material/table';
     AdminComponent,
     AdminHomeComponent,
     UserManageComponent,
-    TableComponent
+    TableComponent,
+    ReservationComponent,
+    CustomDateTimePipe
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     MatSortModule,
-    MatTableModule
+    MatTableModule,
+    FormsModule
   ]
 })
 export class AdminModule { }

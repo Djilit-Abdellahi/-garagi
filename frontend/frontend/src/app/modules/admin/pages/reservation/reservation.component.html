@@ -1,0 +1,80 @@
+<div class="">
+    <app-admin-sidebar></app-admin-sidebar>
+    <div class="content-page">
+        <div class="content">
+            <app-admin-header></app-admin-header>
+            <div class="container-fluid">
+
+                <!-- start page title -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="page-title-box">
+                            <div class="page-title-right">
+                               
+                            </div>
+                            <h4 class="page-title">Dashboard</h4>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4 class="header-title mb-3">Reservation</h4>
+                                <!-- <div id="world-map-markers" style="height: 400px;"></div> -->
+                                <div class="mb-3">
+                                    <input type="text" class="form-control" placeholder="Filter..." [(ngModel)]="filterText" (input)="applyFilter()">
+                                </div>
+                                <table  class="table dt-responsive w-100" >
+                                    <thead>
+                                        <tr>
+                                            <th>Booking Id</th>
+                                            <th>Garage Service</th>
+                                            <th>Garage Name</th>
+                                            <th>Booking Date</th>
+                                            <th>Service Date</th>
+                                            <th>Status</th>
+                                            <th>User Name</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody >
+                                        <tr *ngFor="let item of displayedData" >
+                                            <td>{{ item.bookingId }}</td>
+                                            <td>{{ item.garage.contactNumber }}</td>
+                                            <td>{{ item.garage.name }}</td>
+                                            <td>{{ item.bookingDate | customDateTime }}</td>
+                                            <td>{{ item.serviceDate | customDateTime }}</td>
+                                            <td>{{ item.status }}</td>
+                                            <td>{{ item.user.username }}</td>
+                                            <td>
+                                                <button type="button" class="btn btn-warning m-1" (click)="openUpdateModal(item)"><i
+                                                        class="mdi mdi-wrench"></i> </button>
+                                                <button type="button" class="btn btn-danger m-1"  (click)="deleteItem(item.id)"><i
+                                                        class="mdi mdi-window-close"></i> </button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                    <nav aria-label="Page navigation">
+                                        <ul class="pagination">
+                                          <li class="page-item" [class.disabled]="currPage <= 1">
+                                            <a class="page-link" href="javascript:void(0)" (click)="changePage(currPage - 1)">Previous</a>
+                                          </li>
+                                          <li class="page-item" [class.disabled]="currPage >= totalPages">
+                                            <a class="page-link" href="javascript:void(0)" (click)="changePage(currPage + 1)">Next</a>
+                                          </li>
+                                        </ul>
+                                      </nav>
+                                </table>
+                            </div>
+                        </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<router-outlet></router-outlet>

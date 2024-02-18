@@ -8,8 +8,9 @@ import { AdminSidebarComponent } from './components/admin-sidebar/admin-sidebar.
 import { AdminHeaderComponent } from './components/admin-header/admin-header.component';
 import { AdminComponent } from './components/admin/admin.component';
 import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
-// import { UserManageComponent } from './pages/user-manage/user-manage.component';
+import { UserManageComponent } from './pages/user-manage/user-manage.component';
 import { TableComponent } from './components/table/table.component';
+import { ReservationComponent } from './pages/reservation/reservation.component';
 
 export const routes: Routes = [
   {
@@ -18,7 +19,7 @@ export const routes: Routes = [
   },
   {
     path: 'garage-management',
-    component: GarageManagementComponent,
+    component: AdminHomeComponent,
   },
   {
     path: 'reservation-notifications',
@@ -26,11 +27,15 @@ export const routes: Routes = [
   },
   {
     path: 'user-manage', 
-    component: AdminHomeComponent, 
+    component: UserManageComponent, 
   },
   {
     path: 'admin-header',
-    component: TableComponent,
+    component: UserManageComponent,
+  },
+  {
+    path: 'reservation',
+    component: ReservationComponent,
   }
 ];
 

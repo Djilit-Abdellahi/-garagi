@@ -6,6 +6,7 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { LoginComponent } from './components/login/login.component';
 import { RegistrationComponent } from './components/registration/registration.component';
 import { WelcomePageComponent } from './pages/welcome-page/welcome-page.component';
+import { CustomDateTimePipe } from './pipes/custom-date-time.pipe';
 
 
 
@@ -16,7 +17,8 @@ import { WelcomePageComponent } from './pages/welcome-page/welcome-page.componen
     CapitalizePipe,
     LoginComponent,
     RegistrationComponent,
-    WelcomePageComponent
+    WelcomePageComponent,
+    CustomDateTimePipe
   ],
   imports: [
     CommonModule

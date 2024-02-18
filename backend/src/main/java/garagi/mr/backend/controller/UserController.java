@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/users")
+@CrossOrigin("http://localhost:4200/")
 public class UserController {
 
     private final UserService userService;
