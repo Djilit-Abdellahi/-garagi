@@ -21,7 +21,7 @@ import { HttpClient } from "@angular/common/http";
 })
 export class MapComponent implements AfterViewInit {
 
-  
+
     map: L.Map | undefined;
     garageMarkers: L.Marker[] = [];
     customIcon = L.icon({

@@ -22,7 +22,6 @@
     "@angular/router": "^16.2.0",
     "@canvasjs/angular-charts": "^1.1.1",
     "chart.js": "^4.4.1",
-    "leaflet": "^1.9.4",
     "ng2-charts": "^5.0.4",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
@@ -41,6 +40,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "leaflet": "^1.9.4",
     "typescript": "~5.1.3"
   }
 }

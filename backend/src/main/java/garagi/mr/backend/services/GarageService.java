@@ -20,6 +20,10 @@ public class GarageService {
     @Autowired
     private GarageRepository garageRepository;
 
+    public List<Garage> getGaragesByMoughataa(String moughataa) {
+        return garageRepository.findByMoughataa(moughataa);
+    }
+
 
 
     // Get all garages

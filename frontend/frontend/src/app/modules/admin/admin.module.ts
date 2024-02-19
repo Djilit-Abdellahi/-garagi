@@ -19,6 +19,7 @@ import { NgChartsModule } from 'ng2-charts';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 import { ReactiveFormsModule } from '@angular/forms';
 
+
 @NgModule({
   declarations: [
     GarageManagementComponent,
@@ -31,8 +32,9 @@ import { ReactiveFormsModule } from '@angular/forms';
     TableComponent,
     ReservationComponent,
     CustomDateTimePipe,
-    StatisticsComponent
-    
+    StatisticsComponent,
+
+
   ],
   imports: [
     CommonModule,

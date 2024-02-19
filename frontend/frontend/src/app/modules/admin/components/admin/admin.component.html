@@ -1,36 +1,53 @@
 <div class="">
-    <app-admin-sidebar></app-admin-sidebar>
-    <div class="content-page">
-        <div class="content">
-            <app-admin-header></app-admin-header>
-            <div class="container-fluid">
+  <app-admin-sidebar></app-admin-sidebar>
+  <div class="content-page overflow-auto">
+    <div class="content">
+      <app-admin-header></app-admin-header>
+      <div class="container-fluid">
 
-                <!-- start page title -->
-                <div class="row">
-                    <div class="col-12">
-                        <div class="page-title-box">
-                            <div class="page-title-right">
-                               
-                            </div>
-                            <h4 class="page-title">Dashboard</h4>
-                            
-                        </div>
-                    </div>
+        <!-- start page title -->
+        <div class="row">
+          <div class="col-12">
+            <div class="page-title-box">
+              <div class="page-title-right">
+                <!-- Optional right elements -->
+              </div>
+              <h4 class="page-title">Dashboard</h4>
+            </div>
+          </div>
+        </div>
+        <!-- end page title -->
+
+        <div class="row">
+            <div class="card">
+              <div class="card-body">
+                <h4 class="header-title mb-3">World Vector Map</h4>
+                <div class="map-wrapper">
+                  <div class="p-3">
+                    <ul class="nav nav-pills">
+                      <li>
+                        <select class="form-select ms-md-4" id="moughataa" (change)="toggleMoughataaGarageMarkers($event)">
+                          <option value='allgarages' selected>Tous les moughataas</option>
+                          <option value='Leksar'>Leksar</option>
+                          <option value='Arafat'>Arafat</option>
+                          <option value='dar naim'>Dar naim</option>
+                        </select>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="map-border">
+                    <div id="map"></div>
+                  </div>
                 </div>
-
-                <div class="row">
-                    <div class="col-12">
-                        <div class="card">
-                            <div class="card-body">
-                                <h4 class="header-title mb-3">World Vector Map</h4>
-                                
-                            </div>
-                        </div>
-                </div>
-
+                <!-- End of map insertion -->
+              </div>
             </div>
         </div>
+
+      </div>
     </div>
+  </div>
 </div>
+
 
 <router-outlet></router-outlet>

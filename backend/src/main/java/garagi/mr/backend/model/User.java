@@ -33,10 +33,7 @@ public class User implements UserDetails {
     @Column(name = "PasswordHash", nullable = false)
     private String passwordHash;
 
-    @ManyToOne
-    @JoinColumn(name = "RoleID")
-    private Role roleid;
-
+    @Column(name = "role",nullable = false)
     @Enumerated(EnumType.STRING)
     private garagi.mr.backend.user.Role role;
 
@@ -103,5 +100,13 @@ public class User implements UserDetails {
 
     // Getters and setters
 
+
+    public garagi.mr.backend.user.Role getRole() {
+        return role;
+    }
+
+    public void setRole(garagi.mr.backend.user.Role role) {
+        this.role = role;
+    }
 }
 

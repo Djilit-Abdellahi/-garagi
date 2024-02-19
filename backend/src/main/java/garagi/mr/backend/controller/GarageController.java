@@ -40,6 +40,12 @@ public class GarageController {
         return garageService.getGarageById(garageId);
     }
 
+    @GetMapping("/moughataa/{moughataa}")
+    public ResponseEntity<List<Garage>> getGaragesByMoughataa(@PathVariable String moughataa) {
+        List<Garage> garages = garageService.getGaragesByMoughataa(moughataa);
+        return ResponseEntity.ok(garages);
+    }
+
     // Path: /api/garages/save
     @PostMapping("/save")
     public Garage createGarage(@RequestBody Garage garage) {
