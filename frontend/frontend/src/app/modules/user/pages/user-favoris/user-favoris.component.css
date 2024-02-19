@@ -6,3 +6,24 @@
 .content-page {
     flex: 1;
 }
+
+
+  
+  /* You can continue with warning, danger, etc. */
+  
+.ribbon-success {
+    background-color: #28a745; /* green for high ratings */
+    color: #fff;
+  }
+  
+  .ribbon-warning {
+    background-color: #ffc107; /* yellow for medium ratings */
+    color: #fff;
+  }
+  
+  .ribbon-danger {
+    background-color: #dc3545; /* red for low ratings */
+    color: #fff;
+  }
+  
+ 

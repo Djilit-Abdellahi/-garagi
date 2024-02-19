@@ -1,6 +1,6 @@
 <app-top-nav></app-top-nav>
 
-<!-- Start Content-->
+<!-- Start comment-->
 <div class="container-fluid">
 
     <!-- start page title -->
@@ -20,366 +20,92 @@
     </div>
     <!-- end page title -->
 
-    
-        <div class="row">
-            <div class="col-12">
-                <ul class="nav nav-tabs nav-bordered mb-3">
-                    <li class="nav-item">
-                        <a href="#ribbons-preview" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">
-                            REVIEWS(10)
 
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#ribbons-code" data-bs-toggle="tab" aria-expanded="true" class="nav-link">
-                        
-                         FAVORITES(5)
-                        </a>
-                    </li>
-                </ul> <!-- end nav-->
-                <div class="tab-content">
-                    <div class="tab-pane show active" id="ribbons-preview">
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="card ribbon-box">
-                                    <div class="card-body">
-                                        <div class="ribbon ribbon-primary float-start"><i class="mdi mdi-access-point me-1"></i> Primary</div>
-                                        <h5 class="text-primary float-end mt-0">Primary Header</h5>
-                                        <div class="ribbon-content">
-                                            <p class="mb-0">Quisque nec turpis at urna dictum luctus.
-                                                Suspendisse convallis dignissim eros at volutpat. In egestas
-                                                mattis dui. Aliquam mattis dictum aliquet. Nulla sapien
-                                                mauris, eleifend et sem ac, commodo dapibus odio.</p>
-                                        </div>
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
+    <div class="row">
+        <div class="col-12">
+            <ul class="nav nav-tabs nav-bordered mb-3">
+                <li class="nav-item">
+                    <a href="#ribbons-preview" data-bs-toggle="tab" aria-expanded="false" class="nav-link active">
+                        REVIEWS(10)
 
-                            <div class="col-lg-4">
-                                <div class="card ribbon-box">
-                                    <div class="card-body">
-                                        <div class="ribbon ribbon-success float-end"><i class="mdi mdi-access-point me-1"></i> Success</div>
-                                        <h5 class="text-success float-start mt-0">Success Header</h5>
-                                        <div class="ribbon-content">
-                                            <p class="mb-0">Quisque nec turpis at urna dictum luctus.
-                                                Suspendisse convallis dignissim eros at volutpat. In egestas
-                                                mattis dui. Aliquam mattis dictum aliquet. Nulla sapien
-                                                mauris, eleifend et sem ac, commodo dapibus odio.</p>
-                                        </div>
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#ribbons-code" data-bs-toggle="tab" aria-expanded="true" class="nav-link">
 
-                            <div class="col-lg-4">
-                                <div class="card ribbon-box">
-                                    <div class="card-body">
-                                        <div class="ribbon ribbon-info float-end"><i class="mdi mdi-access-point me-1"></i> Info</div>
-                                        <h5 class="text-info float-start mt-0">Info Header</h5>
-                                        <div class="ribbon-content">
-                                            <p class="mb-0">Quisque nec turpis at urna dictum luctus.
-                                                Suspendisse convallis dignissim eros at volutpat. In egestas
-                                                mattis dui. Aliquam mattis dictum aliquet. Nulla sapien
-                                                mauris, eleifend et sem ac, commodo dapibus odio.</p>
-                                        </div>
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
-                        </div>
-                        <!-- end row -->
+                        FAVORITES(5)
+                    </a>
+                </li>
+            </ul> <!-- end nav-->
+            <div class="tab-content">
+                <div class="tab-pane show active" id="ribbons-preview">
+                    <div class="row">
+                    <div class="col-lg-4" *ngFor="let Review of Reviews">
+                        <div class="card ribbon-box">
+                            <div class="card-body">
+                                <div class="ribbon ribbon-primary float-end">
+                                    {{ Review.Garage }}
+                                </div>
+                                <h5 class="float-end mt-0 mt-4" [ngClass]="getRatingClass(Review.rating)">
+                                    Rating: {{ Review.rating }} / 10
+                                </h5>
+                                <div class="ribbon-content">
+                                    <p class="mb-0">{{ Review.comment }}</p>
+                                </div>
+                            </div> <!-- end card-body -->
+                        </div> <!-- end card-->
+                    </div> <!-- end col -->
+                </div>
+                </div>
+                <div class="tab-pane" id="ribbons-code">
+                    <div class="col-lg">
+                        <div class="card">
+                            <div class="card-body">
+                               
+                                <h4 class="header-title mb-3">FAV Garage <i
+                                    class="mdi mdi-account-heart me-2"></i></h4>
 
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="card ribbon-box">
-                                    <div class="card-body">
-                                        <div class="ribbon ribbon-warning float-start"><i class="mdi mdi-access-point me-1"></i> Warning</div>
-                                        <h5 class="text-warning float-end mt-0">Warning Header</h5>
-                                        <div class="ribbon-content">
-                                            <p class="mb-0">Quisque nec turpis at urna dictum luctus.
-                                                Suspendisse convallis dignissim eros at volutpat. In egestas
-                                                mattis dui. Aliquam mattis dictum aliquet. Nulla sapien
-                                                mauris, eleifend et sem ac, commodo dapibus odio.</p>
-                                        </div>
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
 
-                            <div class="col-lg-4">
-                                <div class="card ribbon-box">
-                                    <div class="card-body">
-                                        <div class="ribbon ribbon-danger float-end"><i class="mdi mdi-access-point me-1"></i> Danger</div>
-                                        <h5 class="text-danger float-start mt-0">Danger Header</h5>
-                                        <div class="ribbon-content">
-                                            <p class="mb-0">Quisque nec turpis at urna dictum luctus.
-                                                Suspendisse convallis dignissim eros at volutpat. In egestas
-                                                mattis dui. Aliquam mattis dictum aliquet. Nulla sapien
-                                                mauris, eleifend et sem ac, commodo dapibus odio.</p>
-                                        </div>
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
+                                <div class="table-responsive">
+                                    <table class="table table-centered table-nowrap table-hover mb-0">
+                                        <tbody>
+                                            <tr *ngFor="let garage of Garages">
+                                                <td>
+                                                  <h5 class="font-14 my-1 ">
+                                                    <a href="javascript:void(0);" class="text-body">{{ garage.title }}</a>
+                                                  </h5>
+                                                  <code><span class=" font-13 black-text">{{ garage.ContactNumber }}</span></code>
+                                                </td>
+                                                <td>
+                                                  <span class="font-13">Address</span> <br>
+                                                  <span class=" font-13">{{ garage.Address }}</span>
+                                                </td>
+                                                <td>
+                                                  <span class=" font-13">Manager</span>
+                                                  <h5 class="font-14 mt-1 fw-normal">{{ garage.ManagerName }}</h5>
+                                                </td>
+                                                <td>
+                                                  <span class=" font-13">Moughataa</span>
+                                                  <h5 class="font-14 mt-1 fw-normal">{{ garage.Moughataa }}</h5>
+                                                </td>
+                                                <td class="table-action" style="width: 90px;">
+                                                  <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
+                                                </td>
+                                              </tr>
+                                              
+                                            
 
-                            <div class="col-lg-4">
-                                <div class="card ribbon-box">
-                                    <div class="card-body">
-                                        <div class="ribbon ribbon-dark float-end"><i class="mdi mdi-access-point me-1"></i> Dark</div>
-                                        <h5 class="text-dark float-start mt-0">Dark Header</h5>
-                                        <div class="ribbon-content">
-                                            <p class="mb-0">Quisque nec turpis at urna dictum luctus.
-                                                Suspendisse convallis dignissim eros at volutpat. In egestas
-                                                mattis dui. Aliquam mattis dictum aliquet. Nulla sapien
-                                                mauris, eleifend et sem ac, commodo dapibus odio.</p>
-                                        </div>
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
-                        </div>
-                        <!-- end row -->
+                                        </tbody>
+                                    </table>
+                                </div> <!-- end table-responsive-->
 
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="card ribbon-box">
-                                    <div class="card-body">
-                                        <div class="ribbon ribbon-secondary text-light float-start"><i class="mdi mdi-access-point me-1"></i> Secondary</div>
-                                        <h5 class="text-secondary float-end mt-0">Secondary Header</h5>
-                                        <div class="ribbon-content">
-                                            <p class="mb-0">Quisque nec turpis at urna dictum luctus.
-                                                Suspendisse convallis dignissim eros at volutpat. In egestas
-                                                mattis dui. Aliquam mattis dictum aliquet. Nulla sapien
-                                                mauris, eleifend et sem ac, commodo dapibus odio.</p>
-                                        </div>
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
-
-                            <div class="col-lg-4">
-                                <div class="card ribbon-box">
-                                    <div class="card-body">
-                                        <div class="ribbon-two ribbon-two-primary"><span>Primary</span></div>
-                                        <p class="mb-0">Quisque nec turpis at urna dictum luctus. Suspendisse
-                                            convallis dignissim eros at volutpat. In egestas mattis dui. Aliquam
-                                            mattis dictum aliquet. Nulla sapien mauris, eleifend et sem ac,
-                                            commodo dapibus odio. Vivamus pretium nec odio cursus elementum.
-                                            Suspendisse molestie ullamcorper ornare.</p>
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
-
-                            <div class="col-lg-4">
-                                <div class="card ribbon-box">
-                                    <div class="card-body">
-                                        <div class="ribbon-two ribbon-two-success"><span>Success</span></div>
-                                        <p class="mb-0">Quisque nec turpis at urna dictum luctus. Suspendisse
-                                            convallis dignissim eros at volutpat. In egestas mattis dui. Aliquam
-                                            mattis dictum aliquet. Nulla sapien mauris, eleifend et sem ac,
-                                            commodo dapibus odio. Vivamus pretium nec odio cursus elementum.
-                                            Suspendisse molestie ullamcorper ornare.</p>
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
-
-                        </div>
-                        <!-- end row -->
-
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="card ribbon-box">
-                                    <div class="card-body">
-                                        <div class="ribbon-two ribbon-two-info"><span>Info</span></div>
-                                        <p class="mb-0">Quisque nec turpis at urna dictum luctus. Suspendisse
-                                            convallis dignissim eros at volutpat. In egestas mattis dui. Aliquam
-                                            mattis dictum aliquet. Nulla sapien mauris, eleifend et sem ac,
-                                            commodo dapibus odio. Vivamus pretium nec odio cursus elementum.
-                                            Suspendisse molestie ullamcorper ornare.</p>
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
-
-                            <div class="col-lg-4">
-                                <div class="card ribbon-box">
-                                    <div class="card-body">
-                                        <div class="ribbon-two ribbon-two-warning"><span>Warning</span></div>
-                                        <p class="mb-0">Quisque nec turpis at urna dictum luctus. Suspendisse
-                                            convallis dignissim eros at volutpat. In egestas mattis dui. Aliquam
-                                            mattis dictum aliquet. Nulla sapien mauris, eleifend et sem ac,
-                                            commodo dapibus odio. Vivamus pretium nec odio cursus elementum.
-                                            Suspendisse molestie ullamcorper ornare.</p>
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
-
-                            <div class="col-lg-4">
-                                <div class="card ribbon-box">
-                                    <div class="card-body">
-                                        <div class="ribbon-two ribbon-two-dark"><span>Dark</span></div>
-                                        <p class="mb-0">Quisque nec turpis at urna dictum luctus. Suspendisse
-                                            convallis dignissim eros at volutpat. In egestas mattis dui. Aliquam
-                                            mattis dictum aliquet. Nulla sapien mauris, eleifend et sem ac,
-                                            commodo dapibus odio. Vivamus pretium nec odio cursus elementum.
-                                            Suspendisse molestie ullamcorper ornare.</p>
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
-
-                        </div>
-                        <!-- end row -->
-
-                        <div class="row">
-                            <div class="col-lg-4">
-                                <div class="card ribbon-box">
-                                    <div class="card-body">
-                                        <div class="ribbon-two ribbon-two-danger"><span>Danger</span></div>
-                                        <p class="mb-0">Quisque nec turpis at urna dictum luctus. Suspendisse
-                                            convallis dignissim eros at volutpat. In egestas mattis dui. Aliquam
-                                            mattis dictum aliquet. Nulla sapien mauris, eleifend et sem ac,
-                                            commodo dapibus odio. Vivamus pretium nec odio cursus elementum.
-                                            Suspendisse molestie ullamcorper ornare.</p>
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
-
-                            <div class="col-lg-4">
-                                <div class="card ribbon-box">
-                                    <div class="card-body">
-                                        <div class="ribbon-two ribbon-two-secondary"><span class="text-light">Secondary</span></div>
-                                        <p class="mb-0">Quisque nec turpis at urna dictum luctus. Suspendisse
-                                            convallis dignissim eros at volutpat. In egestas mattis dui. Aliquam
-                                            mattis dictum aliquet. Nulla sapien mauris, eleifend et sem ac,
-                                            commodo dapibus odio. Vivamus pretium nec odio cursus elementum.
-                                            Suspendisse molestie ullamcorper ornare.</p>
-                                    </div> <!-- end card-body -->
-                                </div> <!-- end card-->
-                            </div> <!-- end col -->
-                        </div>
-                        <!-- end row -->
-
-                    </div> <!-- end preview-->
-
-                    <div class="tab-pane" id="ribbons-code">
-                        <div class="col-lg">
-                            <div class="card">
-                                <div class="card-body">
-                                    <div class="dropdown float-end">
-                                        <a href="#" class="dropdown-toggle arrow-none card-drop" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <i class="mdi mdi-dots-vertical"></i>
-                                        </a>
-                                        <div class="dropdown-menu dropdown-menu-end">
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Weekly Report</a>
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Monthly Report</a>
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Action</a>
-                                            <!-- item-->
-                                            <a href="javascript:void(0);" class="dropdown-item">Settings</a>
-                                        </div>
-                                    </div>
-                                    <h4 class="header-title mb-3">Tasks</h4>
-
-                                    <p><b>107</b> Tasks completed out of 195</p>
-
-                                    <div class="table-responsive">
-                                        <table class="table table-centered table-nowrap table-hover mb-0">
-                                            <tbody>
-                                                <tr>
-                                                    <td>
-                                                        <h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">Coffee detail page - Main Page</a></h5>
-                                                        <span class="text-muted font-13">Due in 3 days</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-muted font-13">Status</span> <br>
-                                                        <span class="badge badge-warning-lighten">In-progress</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-muted font-13">Assigned to</span>
-                                                        <h5 class="font-14 mt-1 fw-normal">Logan R. Cohn</h5>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-muted font-13">Total time spend</span>
-                                                        <h5 class="font-14 mt-1 fw-normal">3h 20min</h5>
-                                                    </td>
-                                                    <td class="table-action" style="width: 90px;">
-                                                        <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
-                                                        <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">Drinking bottle graphics</a></h5>
-                                                        <span class="text-muted font-13">Due in 27 days</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-muted font-13">Status</span> <br>
-                                                        <span class="badge badge-danger-lighten">Outdated</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-muted font-13">Assigned to</span>
-                                                        <h5 class="font-14 mt-1 fw-normal">Jerry F. Powell</h5>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-muted font-13">Total time spend</span>
-                                                        <h5 class="font-14 mt-1 fw-normal">12h 21min</h5>
-                                                    </td>
-                                                    <td class="table-action" style="width: 90px;">
-                                                        <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
-                                                        <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">App design and development</a></h5>
-                                                        <span class="text-muted font-13">Due in 7 days</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-muted font-13">Status</span> <br>
-                                                        <span class="badge badge-success-lighten">Completed</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-muted font-13">Assigned to</span>
-                                                        <h5 class="font-14 mt-1 fw-normal">Scot M. Smith</h5>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-muted font-13">Total time spend</span>
-                                                        <h5 class="font-14 mt-1 fw-normal">78h 05min</h5>
-                                                    </td>
-                                                    <td class="table-action" style="width: 90px;">
-                                                        <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
-                                                        <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td>
-                                                        <h5 class="font-14 my-1"><a href="javascript:void(0);" class="text-body">Poster illustation design</a></h5>
-                                                        <span class="text-muted font-13">Due in 5 days</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-muted font-13">Status</span> <br>
-                                                        <span class="badge badge-warning-lighten">In-progress</span>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-muted font-13">Assigned to</span>
-                                                        <h5 class="font-14 mt-1 fw-normal">John P. Ritter</h5>
-                                                    </td>
-                                                    <td>
-                                                        <span class="text-muted font-13">Total time spend</span>
-                                                        <h5 class="font-14 mt-1 fw-normal">26h 58min</h5>
-                                                    </td>
-                                                    <td class="table-action" style="width: 90px;">
-                                                        <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-pencil"></i></a>
-                                                        <a href="javascript: void(0);" class="action-icon"> <i class="mdi mdi-delete"></i></a>
-                                                    </td>
-                                                </tr>
-                                                
-                                            </tbody>
-                                        </table>
-                                    </div> <!-- end table-responsive-->
-
-                                </div> <!-- end card body-->
-                            </div> <!-- end card -->
-                        </div><!-- end col-->
-                    </div> <!-- end preview code-->
-                </div> <!-- end tab-content-->
-            </div>
+                            </div> <!-- end card body-->
+                        </div> <!-- end card -->
+                    </div><!-- end col-->
+                </div> <!-- end preview code-->
+            </div> <!-- end tab-content-->
         </div>
-        <!-- end row-->
+    </div>
+    <!-- end row-->
 
-    </div> <!-- container -->
+</div> <!-- container -->

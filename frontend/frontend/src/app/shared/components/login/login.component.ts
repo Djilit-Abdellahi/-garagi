@@ -38,7 +38,7 @@ export class LoginComponent {
         if (data.role === 'admin') {
           this.router.navigate(['/admin']); // Navigate to the admin module
         } else if (data.role === 'user') {
-          this.router.navigate(['/user']); // Navigate to the user module
+          this.router.navigate(['/user-home']); // Navigate to the user module
         } else {
           this.router.navigate(['/']); // Navigate to the default route
         }

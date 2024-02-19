@@ -1,0 +1,62 @@
+<app-top-nav></app-top-nav>
+<div class="container-fluid">
+    <!-- start page title -->
+    <div class="row">
+        <div class="col-12">
+            <div class="page-title-box">
+                <div class="page-title-right">
+                    <ol class="breadcrumb m-0">
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
+                        <li class="breadcrumb-item"><a href="javascript: void(0);">Garages</a></li>
+                        <li class="breadcrumb-item active">Garages info</li>
+                    </ol>
+                </div>
+                <h4 class="page-title">Garages</h4>
+            </div>
+        </div>
+    </div>
+    <!-- end page title -->
+    <div class="col-xl-12">
+        <div class="card">
+            <div class="card-body">
+                <code><h4 class="header-title mb-4">All Garages</h4></code>
+              
+
+               
+
+                <div class="table-responsive-sm">
+                    <table class="table table-bordered border-primary table-centered mb-0">
+                        <thead>
+                          <tr>
+                            <th>Name</th>
+                            <th>Manager Name</th>
+                            <th>Contact Number</th>
+                            <th>Address</th>
+                            <th class="text-center">Action</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr *ngFor="let garage of garages">
+                            <td class="table-user">
+                              <img src="{{ garage.imageUrl }}" alt="table-user" class="me-2 rounded-circle">
+                              {{ garage.name }}
+                            </td>
+                            <td>{{ garage.managerName }}</td>
+                            <td>{{ garage.contactNumber }}</td>
+                            <td>{{ garage.address }}</td>
+                            <td class="table-action text-center">
+                                <a href="javascript:void(0);" class="action-icon" > <i class="dripicons-heart me-2"></i></a>
+                            </td>
+                              
+                          </tr>
+                        </tbody>
+                      </table>
+                      
+                </div> <!-- end table-responsive-->
+            </div> <!-- end preview-->
+
+
+
+        </div> <!-- end card body-->
+    </div> <!-- end card -->
+</div>
