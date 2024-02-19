@@ -18,6 +18,7 @@ import { StatisticsComponent } from './components/statistics/statistics.componen
 import { NgChartsModule } from 'ng2-charts';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
 
+
 @NgModule({
   declarations: [
     GarageManagementComponent,
@@ -30,8 +31,9 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
     TableComponent,
     ReservationComponent,
     CustomDateTimePipe,
-    StatisticsComponent
-    
+    StatisticsComponent,
+
+
   ],
   imports: [
     CommonModule,
