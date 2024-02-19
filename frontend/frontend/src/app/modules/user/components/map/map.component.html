@@ -1,4 +1,4 @@
-<div class="topnav">
+<!-- <div class="topnav">
     <div class="container-fluid">
         <nav class="navbar navbar-dark navbar-expand-lg topnav-menu">
 
@@ -30,4 +30,31 @@
             </div>
         </nav>
     </div>
-</div>
+</div> -->
+
+
+
+<div class="map-wrapper">
+    <div class="p-3">
+      <ul class="nav nav-pills">
+        <li>
+          <select class="form-select ms-md-4" id="moughataa" (change)="toggleMoughataaGarageMarkers($event)">
+            <option value='allgarages' selected>Tous les moughataas</option>
+            <option value='Leksar'>Leksar</option>
+            <option value='Arafat'>Arafat</option>
+            <option value='dar naim'>Dar naim</option>
+          </select>
+        </li>
+        <!-- <li>
+          <form class="form-inline waves-light ms-5" mdbWavesEffect>
+            <div class="md-form mt-0">
+              <input class="form-control mr-sm-2" type="text" placeholder="Search">
+            </div>
+          </form>
+        </li> -->
+      </ul>
+    </div>
+    <div class="map-border">
+      <div id="map"></div>
+    </div>
+  </div>

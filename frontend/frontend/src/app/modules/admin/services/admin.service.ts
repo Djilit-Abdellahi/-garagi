@@ -157,4 +157,26 @@ export class AdminService {
     //                           http://localhost:8080/api/bookings/getAllBookings
     return this.http.get<any[]>('http://localhost:8080/api/bookings/getAllBookings');
   }
+
+
+  private apiUrl = 'http://localhost:8080/api/statistics'; // Replace with your actual backend URL
+
+  // constructor(private http: HttpClient) { }
+
+  getBookingsPerUser(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/bookings-per-user`);
+  }
+
+  getBookingStatusDistribution(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/booking-status-distribution`);
+  }
+
+  getBookingsPerGarage(): Observable<any> {
+    return this.http.get(`${this.apiUrl}/bookings-per-garage`);
+  }
+
+  saveGarage(garageData: any) {
+    return this.http.post('http://localhost:8080/api/garages/save', garageData);
+  }
+  
 }

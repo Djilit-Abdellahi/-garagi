@@ -4,9 +4,7 @@ import lombok.Getter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 
-import java.util.Collections;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.stream.Collectors;
 
 import static garagi.mr.backend.user.Permission.*;
@@ -45,7 +43,17 @@ public enum Role {
                 .stream()
                 .map(permission -> new SimpleGrantedAuthority(permission.getPermission()))
                 .collect(Collectors.toList());
-        authorities.add(new SimpleGrantedAuthority("ROLE_" + this.name()));
+        authorities.add(new SimpleGrantedAuthority(this.name()));
         return authorities;
+    }
+    public static List<String> getallRoles() {
+        return Arrays.stream(values())
+                .map(Role::name)
+                .collect(Collectors.toList());
+    }
+    public static Optional<Role> getRoleByName(String roleName) {
+        return Arrays.stream(values())
+                .filter(role -> role.name().equalsIgnoreCase(roleName))
+                .findFirst();
     }
 }

@@ -11,6 +11,7 @@ import { AdminHomeComponent } from './pages/admin-home/admin-home.component';
 import { UserManageComponent } from './pages/user-manage/user-manage.component';
 import { TableComponent } from './components/table/table.component';
 import { ReservationComponent } from './pages/reservation/reservation.component';
+import { StatisticsComponent } from './components/statistics/statistics.component';
 
 export const routes: Routes = [
   {
@@ -36,6 +37,10 @@ export const routes: Routes = [
   {
     path: 'reservation',
     component: ReservationComponent,
+  },
+  {
+    path: 'statistics',
+    component: StatisticsComponent,
   }
 ];
 

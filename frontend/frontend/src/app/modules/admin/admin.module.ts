@@ -14,6 +14,11 @@ import { MatTableModule } from '@angular/material/table';
 import { FormsModule } from '@angular/forms';
 import { ReservationComponent } from './pages/reservation/reservation.component';
 import { CustomDateTimePipe } from '../../shared/pipes/custom-date-time.pipe';
+import { StatisticsComponent } from './components/statistics/statistics.component';
+import { NgChartsModule } from 'ng2-charts';
+import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -26,14 +31,20 @@ import { CustomDateTimePipe } from '../../shared/pipes/custom-date-time.pipe';
     UserManageComponent,
     TableComponent,
     ReservationComponent,
-    CustomDateTimePipe
+    CustomDateTimePipe,
+    StatisticsComponent,
+
+
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     MatSortModule,
     MatTableModule,
-    FormsModule
+    FormsModule,
+    CanvasJSAngularChartsModule,
+    NgChartsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }
