@@ -174,5 +174,9 @@ export class AdminService {
   getBookingsPerGarage(): Observable<any> {
     return this.http.get(`${this.apiUrl}/bookings-per-garage`);
   }
+
+  saveGarage(garageData: any) {
+    return this.http.post('http://localhost:8080/api/garages/save', garageData);
+  }
   
 }

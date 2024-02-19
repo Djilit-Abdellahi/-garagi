@@ -131,6 +131,8 @@
 
 import { Component, OnInit } from '@angular/core';
 import { AdminService } from '../../services/admin.service';
+import { FormBuilder, FormGroup } from '@angular/forms';
+import * as bootstrap from 'bootstrap';
 
 @Component({
   selector: 'app-admin-home',
@@ -144,8 +146,20 @@ export class AdminHomeComponent implements OnInit {
   perPage: number = 10;
   totalPages: number = 0;
   filterText: string = ''; // For storing the filter text
+  garageForm: FormGroup;
 
-  constructor(private adminService: AdminService) {}
+  constructor(private fb: FormBuilder,private adminService: AdminService) {
+
+    this.garageForm = this.fb.group({
+      name: [''],
+      managerName: [''],
+      contactNumber: [''],
+      address: [''],
+      gpsLatitude: [0], // Default to 0 or another sensible default
+      gpsLongitude: [0], // Default to 0 or another sensible default
+      moughataa: ['']
+    });
+  }
 
   ngOnInit() {
     this.adminService.getTableData().subscribe((data: any[]) => {
@@ -157,6 +171,8 @@ export class AdminHomeComponent implements OnInit {
     this.adminService.getAllUsers().subscribe((data: any[]) => {
       console.log("users",data);
     });
+
+    
   }
 
   changePage(page: number) {
@@ -203,5 +219,38 @@ export class AdminHomeComponent implements OnInit {
 
     const filteredData = this.filterText ? this.tableData.filter(filterFunction) : this.tableData;
     this.updateDisplayedData(filteredData);
+  }
+
+
+
+  onSubmit(): void {
+    // Use AdminService to submit the form data
+    // this.adminService.saveGarage(this.garageForm!.value).subscribe(response => {
+    //   console.log('Garage saved successfully:', response);
+    //   // Handle successful save here (e.g., showing a success message)
+    // }, error => {
+    //   console.error('Error saving garage:', error);
+    //   // Handle error here (e.g., showing an error message)
+    // });
+
+    console.log('Form data:', this.garageForm.value);
+
+
+    this.adminService.saveGarage(this.garageForm.value).subscribe({
+      next: (response) => {console.log('Garage saved successfully:', response)
+      this.showSuccessModal();
+    },
+      error: (error) => console.error('Error saving garage:', error)
+    });
+
+  }
+
+
+  showSuccessModal(): void {
+    const successModalElement = document.getElementById('success-alert-modal');
+    if (successModalElement) {
+      const successModal = new bootstrap.Modal(successModalElement);
+      successModal.show();
+    }
   }
 }

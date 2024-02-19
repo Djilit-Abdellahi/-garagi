@@ -110,30 +110,30 @@ export class MapComponent implements AfterViewInit {
   }
 
 
-  // getGaragesByMoughataa(moughataa: string) {
-  //   this.http.get<any[]>("http://localhost:8080/api/garages/moughataa/" + moughataa)
-  //     .subscribe({
-  //       next: garages => {
-  //         this.data = garages;
-  //         this.toggleGarageMarkers(); // Afficher les marqueurs au chargement
-  //       },
-  //       error: err => {
-  //         console.error('Error fetching garages:', err);
-  //       }
-  //     });
-  // }
+  getGaragesByMoughataa(moughataa: string) {
+    this.http.get<any[]>("http://localhost:8080/api/garages/moughataa/" + moughataa)
+      .subscribe({
+        next: garages => {
+          this.data = garages;
+          this.toggleGarageMarkers(); // Afficher les marqueurs au chargement
+        },
+        error: err => {
+          console.error('Error fetching garages:', err);
+        }
+      });
+  }
 
-  // toggleMoughataaGarageMarkers(event: any) {
-  //   if (event && event.target && event.target.value) {
-  //     const moughataa: string = event.target.value;
-  //     if (moughataa === "allgarages") {
-  //       this.getGarages();
-  //     } else {
-  //       // Afficher les garages pour la moughataa sélectionnée
-  //       this.getGaragesByMoughataa(moughataa);
-  //     }
-  //   }
-  // }
+  toggleMoughataaGarageMarkers(event: any) {
+    if (event && event.target && event.target.value) {
+      const moughataa: string = event.target.value;
+      if (moughataa === "allgarages") {
+        this.getGarages();
+      } else {
+        // Afficher les garages pour la moughataa sélectionnée
+        this.getGaragesByMoughataa(moughataa);
+      }
+    }
+  }
 
   addMarkers() {
     this.removeMarkers(); // Supprimer les marqueurs existants avant d'ajouter les nouveaux

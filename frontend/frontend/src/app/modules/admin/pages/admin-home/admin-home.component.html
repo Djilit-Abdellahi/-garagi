@@ -18,22 +18,111 @@
                     </div>
                 </div>
                 <div class="row">
+                    <div id="signup-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+
+                                <div class="modal-body">
+                                    <div class="text-center mt-2 mb-4">
+                                        <!-- <a href="index.html" class="text-success">
+                                            <span><img src="assets/images/logo-dark.png" alt="" height="18"></span>
+                                        </a> -->
+                                    </div>
+
+
+
+                                    <!-- garage-form.component.html -->
+                                    <form class="ps-3 pe-3" [formGroup]="garageForm" (ngSubmit)="onSubmit()">
+                                        <div class="mb-3">
+                                            <label for="name" class="form-label">Name </label>
+                                            <input class="form-control" id="name" formControlName="name" type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="managerName" class="form-label">Manager Name </label>
+                                            <input class="form-control" id="managerName" formControlName="managerName"
+                                                type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="contactNumber" class="form-label">Contact Number </label>
+                                            <input class="form-control" id="contactNumber"
+                                                formControlName="contactNumber" type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="address" class="form-label">Address </label>
+                                            <input class="form-control" id="address" formControlName="address"
+                                                type="text">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="gpsLatitude" class="form-label">GPS Latitude </label>
+                                            <input class="form-control" id="gpsLatitude" formControlName="gpsLatitude"
+                                                type="number">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="gpsLongitude" class="form-label">GPS Longitude </label>
+                                            <input class="form-control" id="gpsLongitude" formControlName="gpsLongitude"
+                                                type="number">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="moughataa" class="form-label">Moughataa </label>
+                                            <input class="form-control" id="moughataa" formControlName="moughataa"
+                                                type="text">
+                                        </div>
+                                        <button class="btn btn-primary" type="submit">Submit</button>
+                                    </form>
+
+
+                                    <!-- <form class="ps-3 pe-3" action="#">
                     
+                                        <div class="mb-3">
+                                            <label for="username" class="form-label">Name</label>
+                                            <input class="form-control" type="email" id="username" required="" placeholder="Michael Zenaty">
+                                        </div>
+                    
+                                        <div class="mb-3">
+                                            <label for="emailaddress" class="form-label">Email address</label>
+                                            <input class="form-control" type="email" id="emailaddress" required="" placeholder="john@deo.com">
+                                        </div>
+                    
+                                        <div class="mb-3">
+                                            <label for="password" class="form-label">Password</label>
+                                            <input class="form-control" type="password" required="" id="password" placeholder="Enter your password">
+                                        </div>
+                    
+                                        <div class="mb-3">
+                                            <div class="form-check">
+                                                <input type="checkbox" class="form-check-input" id="customCheck1">
+                                                <label class="form-check-label" for="customCheck1">I accept <a href="#">Terms and Conditions</a></label>
+                                            </div> 
+                                        </div>
+                    
+                                        <div class="mb-3 text-center">
+                                            <button class="btn btn-primary" type="submit">Sign Up Free</button>
+                                        </div>
+                    
+                                    </form> -->
+
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
                 </div>
 
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-body" >
+                            <div class="card-body">
                                 <h4 class="header-title mb-3">Admin Manage</h4>
                                 <!-- <div id="world-map-markers" style="height: 400px;"></div>
                                  -->
-                                
+
+                                <button type="button" class="btn btn-primary float-end m-1" data-bs-toggle="modal"
+                                    data-bs-target="#signup-modal">ADD</button>
                                 <div class="mb-3">
-                                    <input type="text" class="form-control" placeholder="Filter..." [(ngModel)]="filterText" (input)="applyFilter()">
+                                    <input type="text" class="form-control" placeholder="Filter..."
+                                        [(ngModel)]="filterText" (input)="applyFilter()">
                                 </div>
 
-                                <table  class="table dt-responsive w-100" >
+                                <table class="table dt-responsive w-100">
                                     <thead>
                                         <tr>
                                             <th>Name</th>
@@ -46,8 +135,8 @@
                                             <th>Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody >
-                                        <tr *ngFor="let item of displayedData" >
+                                    <tbody>
+                                        <tr *ngFor="let item of displayedData">
                                             <td>{{ item.name }}</td>
                                             <td>{{ item.managerName }}</td>
                                             <td>{{ item.gpsLatitude }}</td>
@@ -56,10 +145,12 @@
                                             <td>{{ item.address }}</td>
                                             <td>{{ item.moughataa }}</td>
                                             <td>
-                                                <button type="button" class="btn btn-warning m-1" (click)="openUpdateModal(item)"><i
-                                                        class="mdi mdi-wrench"></i> </button>
-                                                <button type="button" class="btn btn-danger m-1"  (click)="deleteItem(item.id)"><i
-                                                        class="mdi mdi-window-close"></i> </button>
+                                                <button type="button" class="btn btn-warning m-1"
+                                                    (click)="openUpdateModal(item)"><i class="mdi mdi-wrench"></i>
+                                                </button>
+                                                <button type="button" class="btn btn-danger m-1"
+                                                    (click)="deleteItem(item.garageId)"><i class="mdi mdi-window-close"></i>
+                                                </button>
                                             </td>
                                         </tr>
                                         <!-- <tr>
@@ -213,18 +304,36 @@
                                             </td>
                                         </tr> -->
 
+
+                                        <div id="success-alert-modal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true">
+                                            <div class="modal-dialog modal-sm">
+                                              <div class="modal-content modal-filled bg-success">
+                                                <div class="modal-body p-4">
+                                                  <div class="text-center">
+                                                    <i class="dripicons-checkmark h1"></i>
+                                                    <h4 class="mt-2">Well Done!</h4>
+                                                    <p class="mt-3">Your data has been successfully saved.</p>
+                                                    <button type="button" class="btn btn-light my-2" data-bs-dismiss="modal">Continue</button>
+                                                  </div>
+                                                </div>
+                                              </div>
+                                            </div>
+                                          </div>
+                                        
                                     </tbody>
                                 </table>
                                 <nav aria-label="Page navigation">
                                     <ul class="pagination">
-                                      <li class="page-item" [class.disabled]="currPage <= 1">
-                                        <a class="page-link" href="javascript:void(0)" (click)="changePage(currPage - 1)">Previous</a>
-                                      </li>
-                                      <li class="page-item" [class.disabled]="currPage >= totalPages">
-                                        <a class="page-link" href="javascript:void(0)" (click)="changePage(currPage + 1)">Next</a>
-                                      </li>
+                                        <li class="page-item" [class.disabled]="currPage <= 1">
+                                            <a class="page-link" href="javascript:void(0)"
+                                                (click)="changePage(currPage - 1)">Previous</a>
+                                        </li>
+                                        <li class="page-item" [class.disabled]="currPage >= totalPages">
+                                            <a class="page-link" href="javascript:void(0)"
+                                                (click)="changePage(currPage + 1)">Next</a>
+                                        </li>
                                     </ul>
-                                  </nav>
+                                </nav>
 
                             </div>
                         </div>

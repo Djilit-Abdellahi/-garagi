@@ -17,6 +17,7 @@ import { CustomDateTimePipe } from '../../shared/pipes/custom-date-time.pipe';
 import { StatisticsComponent } from './components/statistics/statistics.component';
 import { NgChartsModule } from 'ng2-charts';
 import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
     MatTableModule,
     FormsModule,
     CanvasJSAngularChartsModule,
-    NgChartsModule
+    NgChartsModule,
+    ReactiveFormsModule
   ]
 })
 export class AdminModule { }
