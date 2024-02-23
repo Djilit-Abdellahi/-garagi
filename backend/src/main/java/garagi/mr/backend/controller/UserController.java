@@ -1,5 +1,6 @@
 package garagi.mr.backend.controller;
 
+import garagi.mr.backend.dto.UserDTO;
 import garagi.mr.backend.model.User;
 import garagi.mr.backend.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +23,7 @@ public class UserController {
 
 
     @GetMapping("/getAllUsers")
-    public List<User> getAllUsers() {
+    public List<UserDTO> getAllUsers() {
         return userService.getAllUsers();
     }
 

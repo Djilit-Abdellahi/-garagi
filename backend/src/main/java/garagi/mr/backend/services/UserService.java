@@ -1,6 +1,7 @@
 package garagi.mr.backend.services;
 
 
+import garagi.mr.backend.dto.UserDTO;
 import garagi.mr.backend.model.User;
 import garagi.mr.backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,8 +21,12 @@ public class UserService {
     }
 
     // Get all users
-    public List<User> getAllUsers() {
-        return userRepository.findAll();
+    public List<UserDTO> getAllUsers() {
+        List<User> all = userRepository.findAll();
+        List<UserDTO> allDTO = all.stream().map(user -> {
+            return new UserDTO(user);
+        }).toList();
+        return allDTO;
     }
 
     // Get a single user by ID

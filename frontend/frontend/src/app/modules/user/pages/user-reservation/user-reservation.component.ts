@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ReservationService } from '../../services/reservation.service';
 
-export interface reservation {
+export interface Reservation {
   id: number;
   title: string;
   status: string;
@@ -15,7 +17,7 @@ export interface reservation {
   styleUrls: ['./user-reservation.component.css']
 })
 export class UserReservationComponent implements OnInit {
-  Reservations: reservation[] = [
+  Reservations: Reservation[] = [
     {
       id: 1,
       title: 'App design and development',
@@ -40,40 +42,58 @@ export class UserReservationComponent implements OnInit {
       bookingDate: '2024-02-18',
       serviceDate: '2024-03-18'
     }
-    // Add more project objects here
   ];
 
-  constructor() { }
-
-  
-  filteredReservations: reservation[] = [];
+  filteredReservations: Reservation[] = [];
   currentFilter: string = 'All';
+
+  // Static data for garages and services
+  garages = [
+    { id: 1, name: 'Garage A' },
+    { id: 2, name: 'Garage B' },
+    { id: 3, name: 'Garage C' }
+  ];
+
+  services = [
+    { id: 1, name: 'Oil Change' },
+    { id: 2, name: 'Tire Rotation' },
+    { id: 3, name: 'Brake Inspection' }
+  ];
+
+  // Booking form data structure
+  booking = {
+    garageId: '',
+    serviceId: '',
+    bookingDate: '',
+    serviceDate: '',
+    status: ''
+  };
+
+  constructor(private reservationService: ReservationService) { }
 
   ngOnInit(): void {
     this.applyFilter('All');
+    // Optionally, fetch data from the server here
   }
 
   applyFilter(filter: string): void {
     this.currentFilter = filter;
     if (filter === 'All') {
       this.filteredReservations = this.Reservations;
-    } else if (filter === 'Current') {
-      // Assuming 'Current' means 'Pending'
-      this.filteredReservations = this.Reservations.filter(res => res.status === 'Pending');
-    } else if (filter === 'Past') {
-      // Assuming 'Past' means 'Finished' or 'Canceled'
-      this.filteredReservations = this.Reservations.filter(res => res.status === 'Finished' || res.status === 'Canceled');
     } else {
-      this.filteredReservations = this.Reservations.filter(res => res.status.toLowerCase() === filter.toLowerCase());
+      this.filteredReservations = this.Reservations.filter(res => res.status === filter);
     }
   }
-  
 
   getBadgeClass(status: string): string {
     return {
       'Finished': 'badge-finished',
       'Canceled': 'badge-canceled',
       'Pending': 'badge-pending'
-    }[status] || '';
+    }[status] || 'badge-secondary';
+  }
+
+  onSubmit(): void {
+    
   }
 }

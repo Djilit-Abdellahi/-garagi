@@ -41,11 +41,13 @@ import { GarageRoutingModule } from './modules/garage/garage-routing.module';
 import { MapComponent } from './modules/user/components/map/map.component';
 import { HomeComponent } from './shared/home/home.component';
 import { RegistrationComponent } from './shared/components/registration/registration.component';
-
+import { Page404Component } from './shared/pages/page404/page404.component';
 
 const appRoutes: Routes = [
   { path: 'stat', component: StatisticsComponent },
   { path: 'map', component: MapComponent },
+  { path: '404', component: Page404Component },
+  
  
   { path: 'login', component: LoginComponent },
   { path: '', component: HomeComponent },
@@ -61,6 +63,7 @@ const appRoutes: Routes = [
     canActivate: [AuthGuard],
     data: { roles: ['user'] }
   },
+  { path: '**', redirectTo: '/404' },
 ];
 
 

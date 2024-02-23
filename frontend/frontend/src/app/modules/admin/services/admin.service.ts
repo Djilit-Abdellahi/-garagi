@@ -155,6 +155,7 @@ export class AdminService {
 
   getAllBookings(): Observable<any[]> {
     //                           http://localhost:8080/api/bookings/getAllBookings
+    //                           /api/bookings
     return this.http.get<any[]>('http://localhost:8080/api/bookings/getAllBookings');
   }
 

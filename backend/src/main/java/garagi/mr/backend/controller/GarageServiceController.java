@@ -10,6 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api/garage-services")
+@CrossOrigin("http://localhost:4200/")
 public class GarageServiceController {
 
     private final GarageServiceService garageServiceService;

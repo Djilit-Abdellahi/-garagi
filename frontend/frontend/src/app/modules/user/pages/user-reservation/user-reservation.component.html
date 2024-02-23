@@ -1,81 +1,150 @@
 <app-top-nav></app-top-nav>
 
-                    <!-- Start Content-->
-                    <div class="container-fluid">
-                        
-                        <!-- start page title -->
-                        <div class="row">
-                            <div class="col-12">
-                                <div class="page-title-box">
-                                    <div class="page-title-right">
-                                        <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Reservations</a></li>
-                                            <li class="breadcrumb-item active">booking info</li>
-                                        </ol>
-                                    </div>
-                                    <h4 class="page-title">Booking History</h4>
-                                </div>
-                            </div>
-                        </div>     
-                        <!-- end page title --> 
+<!-- Start Content-->
+<div class="container-fluid">
 
-                        <div class="row mb-2">
-                            <div class="col-sm-4">
-                                <a href="/user-home" class="btn btn-danger btn-rounded mb-3"><i class="mdi mdi-plus me-2"></i>Reserve Now</a>
-                            </div>
-                            <div class="col-sm-8">
-                                <div class="text-sm-end">
-                                   <!-- Filter buttons -->
-<div class="btn-group mb-3">
-    <button type="button" class="btn btn-primary" (click)="applyFilter('All')">All</button>
+  <!-- start page title -->
+  <div class="row">
+    <div class="col-12">
+      <div class="page-title-box">
+        <div class="page-title-right">
+          <ol class="breadcrumb m-0">
+            <li class="breadcrumb-item"><a href="javascript: void(0);">Home</a></li>
+            <li class="breadcrumb-item"><a href="javascript: void(0);">Reservations</a></li>
+            <li class="breadcrumb-item active">booking info</li>
+          </ol>
+        </div>
+        <h4 class="page-title">Booking History</h4>
+      </div>
+    </div>
   </div>
-  <div class="btn-group mb-3 ms-1">
-    <button type="button" class="btn btn-light" (click)="applyFilter('Current')">Current Reservation Status</button>
-    <button type="button" class="btn btn-light" (click)="applyFilter('Past')">Past Reservations List</button>
+  <!-- end page title -->
+
+  <div class="row mb-2">
+    <div class="col-sm-4">
+      <a href="/user-home" class="btn btn-danger btn-rounded mb-3"><i class="mdi mdi-plus me-2"></i>Reserve Now</a>
+    </div>
+    <div class="col-sm-8">
+      <div class="text-sm-end">
+        <!-- Filter buttons -->
+        <div class="btn-group mb-3">
+          <button type="button" class="btn btn-primary" (click)="applyFilter('All')">All</button>
+        </div>
+        <div class="btn-group mb-3 ms-1">
+          <button type="button" class="btn btn-light" (click)="applyFilter('Current')">Current Reservation
+            Status</button>
+          <button type="button" class="btn btn-light" (click)="applyFilter('Past')">Past Reservations List</button>
+        </div>
+        <div class="btn-group mb-3 ms-2 d-none d-sm-inline-block">
+          <button type="button" class="btn btn-secondary"><i class="dripicons-view-apps"></i></button>
+        </div>
+        <div class="btn-group mb-3 d-none d-sm-inline-block">
+          <button type="button" class="btn btn-link text-muted"><i class="dripicons-checklist"></i></button>
+        </div>
+      </div>
+    </div><!-- end col-->
   </div>
-                                    <div class="btn-group mb-3 ms-2 d-none d-sm-inline-block">
-                                        <button type="button" class="btn btn-secondary"><i class="dripicons-view-apps"></i></button>
-                                    </div>
-                                    <div class="btn-group mb-3 d-none d-sm-inline-block">
-                                        <button type="button" class="btn btn-link text-muted"><i class="dripicons-checklist"></i></button>
-                                    </div>
-                                </div>
-                            </div><!-- end col-->
-                        </div> 
-                        <div class="row">
-                            <div class="col-lg-6 col-xxl-3" *ngFor="let reservation of filteredReservations">
-                              <div class="card d-block">
-                                <div class="card-body">
-                                  <!-- Dropdown and Reservation title here -->
-                                  <h4 class="mt-0">
-                                    <a href="#" class="text-title">{{ reservation.title }}</a>
-                                  </h4>
-                                  <div class="badge" 
-                                  [ngClass]="{
+
+  <div class="row">
+    <div class="col-lg-6 col-xxl-3" *ngFor="let reservation of filteredReservations">
+      <div class="card d-block">
+        <div class="card-body">
+          <!-- Dropdown and Reservation title here -->
+          <h4 class="mt-0">
+            <a href="#" class="text-title">{{ reservation.title }}</a>
+          </h4>
+          <div class="badge" [ngClass]="{
                                     'badge-finished': reservation.status === 'Finished',
                                     'badge-canceled': reservation.status === 'Canceled',
                                     'badge-pending': reservation.status === 'Pending'
-                                  }">{{ reservation.status }}</div>                            
-                                <p class="text-muted font-13 mb-3">{{ reservation.description }}<a href="javascript:void(0);" class="fw-bold text-muted">view more</a></p>
-                                  <p class="mb-1">
-                                    <span class="pe-2 text-nowrap mb-2 d-inline-block">
-                                      <i class="mdi mdi-update me-1 text-muted"></i>
-                                      <b>Booking Date:</b> {{ reservation.bookingDate }}
-                                    </span>
-                                    <span class="text-nowrap mb-2 d-inline-block">
-                                      <i class="dripicons-alarm me-1 text-muted"></i>
-                                      <b>Service Date:</b> {{ reservation.serviceDate }}
-                                    </span>
-                                  </p>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                          <!-- end row-->
+                                  }">{{ reservation.status }}</div>
+          <p class="text-muted font-13 mb-3">{{ reservation.description }}<a href="javascript:void(0);"
+              class="fw-bold text-muted">view more</a></p>
+          <p class="mb-1">
+            <span class="pe-2 text-nowrap mb-2 d-inline-block">
+              <i class="mdi mdi-update me-1 text-muted"></i>
+              <b>Booking Date:</b> {{ reservation.bookingDate }}
+            </span>
+            <span class="text-nowrap mb-2 d-inline-block">
+              <i class="dripicons-alarm me-1 text-muted"></i>
+              <b>Service Date:</b> {{ reservation.serviceDate }}
+            </span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
 
-                        <!-- end row-->
-                        
-                    </div> <!-- container -->
 
-        
+
+ 
+ <!-- Button to trigger modal -->
+<button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addBookingModal">Add Booking</button>
+
+<!-- Modal Structure -->
+
+
+<div id="addBookingModal" class="modal fade" tabindex="-1" aria-labelledby="addBookingModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addBookingModalLabel">Add New Booking</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="max-height: 600px;">
+        <!-- Form Start -->
+        <form (ngSubmit)="onSubmit()" #bookingForm="ngForm">
+          <!-- Garage Selection -->
+          <div class="mb-1">
+            <label for="garageId" class="form-label">Garage</label>
+            <select class="form-select" id="garageId" [(ngModel)]="booking.garageId" name="garageId" required>
+              <option *ngFor="let garage of garages" [value]="garage.id">{{ garage.name }}</option>
+            </select>
+          </div>
+          <!-- Service Selection -->
+          <div class="mb-1">
+            <label for="serviceId" class="form-label">Service</label>
+            <select class="form-select" id="serviceId" [(ngModel)]="booking.serviceId" name="serviceId" required>
+              <option *ngFor="let service of services" [value]="service.id">{{ service.name }}</option>
+            </select>
+          </div>
+          <!-- Booking Date -->
+          <div class="mb-1">
+            <label for="bookingDate" class="form-label">Booking Date</label>
+            <input type="date" class="form-control" id="bookingDate" [(ngModel)]="booking.bookingDate" name="bookingDate" required>
+          </div>
+          <!-- Service Date -->
+          <div class="mb-1">
+            <label for="serviceDate" class="form-label">Service Date</label>
+            <input type="date" class="form-control" id="serviceDate" [(ngModel)]="booking.serviceDate" name="serviceDate" required>
+          </div>
+          <!-- Status Selection -->
+          <div class="mb-1">
+            <!-- <label for="status" class="form-label">Status</label> -->
+            <!-- <select class="form-select" id="status" [(ngModel)]="booking.status" name="status" required>
+              <option value="Scheduled">Scheduled</option>
+              <option value="Completed">Completed</option>
+              <option value="Cancelled">Cancelled</option>
+            </select> -->
+            <input type="hidden" value="padding">
+          </div>
+          <!-- Modal Footer -->
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+            <button type="submit" class="btn btn-primary" [disabled]="!bookingForm.valid">Add Booking</button>
+          </div>
+        </form>
+        <!-- Form End -->
+      </div>
+    </div>
+  </div>
+</div>
+
+  
+
+
+  <!-- end row-->
+
+  <!-- end row-->
+
+</div> <!-- container -->

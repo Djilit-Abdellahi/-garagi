@@ -6,9 +6,13 @@ import { GarageHomeComponent } from './pages/garage-home/garage-home.component';
 
 export const routes: Routes = [
   {
-    path: 'garage',
+    path: 'garage-home',
     component: GarageHomeComponent, 
-  }
+  },
+  // {
+  //   path: 'garage',
+  //   component: GarageHomeComponent, 
+  // }
 ];
 
 @NgModule({

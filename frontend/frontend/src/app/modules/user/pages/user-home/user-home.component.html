@@ -1,2 +1,91 @@
 
 <app-top-nav></app-top-nav>
+
+<div class="row">
+    <div class="card">
+      <div class="card-body">
+        <h4 class="header-title">World Vector Map</h4>
+        <div class="map-wrapper">
+          <div class="p-3">
+            <ul class="nav nav-pills">
+              <li>
+                <select class="form-select ms-md-4" id="moughataa" (change)="toggleMoughataaGarageMarkers($event)">
+                  <option value='allgarages' selected>Tous les moughataas</option>
+                  <option value='Leksar'>Leksar</option>
+                  <option value='Arafat'>Arafat</option>
+                  <option value='dar naim'>Dar naim</option>
+                </select>
+              </li>
+            </ul>
+          </div>
+          <div class="map-border">
+            <div id="map"></div>
+          </div>
+        </div>
+        <!-- End of map insertion -->
+      </div>
+    </div>
+
+    <!-- Button to trigger modal -->
+<!-- <button type="button" class="btn btn-info" data-bs-toggle="modal" data-bs-target="#addBookingModal">Add Booking</button> -->
+
+<!-- Modal Structure -->
+
+
+<div id="addBookingModal" class="modal fade" tabindex="-1" aria-labelledby="addBookingModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="addBookingModalLabel">Add New Booking</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" style="max-height: 600px;">
+        <!-- Form Start -->
+        <form (ngSubmit)="onSubmit()" #bookingForm="ngForm">
+          <!-- Garage Selection -->
+          <div class="mb-1">
+            <label for="garageId" class="form-label">Name</label>
+            <!-- <select class="form-select" id="garageId" [(ngModel)]="booking.garageId" name="garageId" required>
+              <option *ngFor="let garage of garages" [value]="garage.id">{{ garage.name }}</option>
+            </select> -->
+            <input type="text" class="form-control" id="garageId"  name="name" required>
+          </div>
+          <!-- Service Selection -->
+          <div class="mb-1">
+            <label for="serviceId" class="form-label">Service</label>
+            <select class="form-select" id="serviceId" [(ngModel)]="booking.serviceId" name="serviceId" required>
+              <option *ngFor="let service of services" [value]="service.id">{{ service.name }}</option>
+            </select>
+          </div>
+          <!-- Booking Date -->
+          <div class="mb-1">
+            <label for="bookingDate" class="form-label">Booking Date</label>
+            <input type="date" class="form-control" id="bookingDate" [(ngModel)]="booking.bookingDate" name="bookingDate" required>
+          </div>
+          <!-- Service Date -->
+          <!-- <div class="mb-1">
+            <label for="serviceDate" class="form-label">Service Date</label>
+            <input type="date" class="form-control" id="serviceDate" [(ngModel)]="booking.serviceDate" name="serviceDate" required>
+          </div> -->
+          <!-- Status Selection -->
+          <div class="mb-1">
+            <!-- <label for="status" class="form-label">Status</label> -->
+            <!-- <select class="form-select" id="status" [(ngModel)]="booking.status" name="status" required>
+              <option value="Scheduled">Scheduled</option>
+              <option value="Completed">Completed</option>
+              <option value="Cancelled">Cancelled</option>
+            </select> -->
+            <input type="hidden" value="padding">
+          </div>
+          <!-- Modal Footer -->
+          <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button> -->
+            <button type="submit" class="btn btn-primary" [disabled]="!bookingForm.valid">Add Booking</button>
+          </div>
+        </form>
+        <!-- Form End -->
+      </div>
+    </div>
+  </div>
+</div>
+</div>

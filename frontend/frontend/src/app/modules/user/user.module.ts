@@ -10,6 +10,7 @@ import { TopNavComponent } from './components/top-nav/top-nav.component';
 import { UserReservationComponent } from './pages/user-reservation/user-reservation.component';
 import { UserFavorisComponent } from './pages/user-favoris/user-favoris.component';
 import { UserGaragesComponent } from './pages/user-garages/user-garages.component';
+import { FormsModule } from '@angular/forms'; // Import FormsModule
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { UserGaragesComponent } from './pages/user-garages/user-garages.componen
   imports: [
     CommonModule,
     UserRoutingModule,
+    FormsModule 
     
   ]
 })
